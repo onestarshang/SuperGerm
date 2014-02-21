@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="20" tilewidth="200" tileheight="100">
+ <tileset firstgid="1" name="tileMap" tilewidth="200" tileheight="100">
+  <image source="level1.png" width="1000" height="100"/>
+  <tile id="0">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="megma" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="6" name="fence" tilewidth="50" tileheight="50">
+  <image source="rock.png" width="50" height="50"/>
+  <terraintypes>
+   <terrain name="新地形" tile="-1"/>
+  </terraintypes>
+ </tileset>
+ <tileset firstgid="7" name="megama" tilewidth="200" tileheight="100">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/megama.png" width="200" height="100"/>
+ </tileset>
+ <tileset firstgid="8" name="germ" tilewidth="136" tileheight="136">
+  <image source="../../../../../../Documents/细胞素材/程序用/角色/germ.png" width="136" height="136"/>
+ </tileset>
+ <tileset firstgid="9" name="fireball" tilewidth="82" tileheight="128">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/fireball.png" width="82" height="128"/>
+ </tileset>
+ <tileset firstgid="10" name="landgerm" tilewidth="121" tileheight="154">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/landgerm.png" width="121" height="154"/>
+ </tileset>
+ <layer name="map1" width="80" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztlYsKgCAMRTXz/385BAdrLOczsO6BMaPH5nGQcwAAAAAAAAAAwL4cLELOoAx3dipB9xIhx1fwOeTawnKmRWTrWfCzeZtaV0SPs1X+ZB/cY8ots9BSj2rUfpv66HU26k/2bZ1fFNfelefTu7vroGRZz5p5fn6jzmr8abOieZJuavzJPfP5kfuLD7lUS4uZzp72lnqnf4m2xxY3s57Zyd+q9//i7wJHjwWB
+  </data>
+ </layer>
+ <objectgroup name="FireBall" width="80" height="20">
+  <object x="2600" y="1600" width="200" height="100"/>
+  <object gid="9" x="10400" y="1700"/>
+  <object gid="9" x="8200" y="1700"/>
+  <object gid="9" x="7400" y="1700"/>
+  <object gid="9" x="4400" y="1600"/>
+  <object gid="6" x="9000" y="900"/>
+  <object gid="6" x="10800" y="800"/>
+  <object gid="6" x="12200" y="900"/>
+  <object gid="6" x="13600" y="800"/>
+ </objectgroup>
+ <objectgroup name="Rock" width="80" height="20">
+  <object gid="6" x="1400" y="1400"/>
+  <object gid="6" x="3800" y="1000"/>
+  <object gid="6" x="6000" y="900"/>
+ </objectgroup>
+ <objectgroup name="Megama" width="80" height="20">
+  <object gid="7" x="2600" y="1700"/>
+  <object gid="7" x="4400" y="1600"/>
+  <object gid="7" x="6200" y="1800"/>
+  <object gid="7" x="7400" y="1700"/>
+  <object gid="7" x="7800" y="1700"/>
+  <object gid="7" x="8200" y="1700"/>
+  <object gid="7" x="9800" y="1700"/>
+  <object gid="7" x="10000" y="1700"/>
+  <object gid="7" x="10200" y="1700"/>
+  <object gid="7" x="10400" y="1700"/>
+  <object gid="7" x="10600" y="1700"/>
+  <object gid="7" x="10800" y="1700"/>
+  <object gid="7" x="15400" y="1300"/>
+ </objectgroup>
+ <objectgroup name="Germ" width="80" height="20">
+  <object gid="8" x="200" y="1500"/>
+  <object gid="8" x="800" y="1700"/>
+  <object gid="8" x="1000" y="1200"/>
+  <object gid="8" x="2000" y="1300"/>
+  <object gid="8" x="2800" y="1500"/>
+  <object gid="8" x="2800" y="1300"/>
+  <object gid="8" x="3400" y="1300"/>
+  <object gid="8" x="3600" y="1100"/>
+  <object gid="8" x="3400" y="1000"/>
+  <object gid="8" x="4000" y="1000"/>
+  <object gid="8" x="4200" y="1200"/>
+  <object gid="8" x="4400" y="1300"/>
+  <object gid="8" x="4600" y="1000"/>
+  <object gid="8" x="4800" y="800"/>
+  <object gid="8" x="5000" y="1000"/>
+  <object gid="8" x="5600" y="1200"/>
+  <object gid="8" x="5200" y="1400"/>
+  <object gid="8" x="5200" y="1200"/>
+  <object gid="8" x="6000" y="1400"/>
+  <object gid="8" x="6200" y="1200"/>
+  <object gid="8" x="6200" y="1100"/>
+  <object gid="8" x="6400" y="900"/>
+  <object gid="8" x="6400" y="1000"/>
+  <object gid="8" x="6600" y="1200"/>
+  <object gid="8" x="7200" y="1400"/>
+  <object gid="8" x="7600" y="1200"/>
+  <object gid="8" x="7400" y="1000"/>
+  <object gid="8" x="7800" y="1000"/>
+  <object gid="8" x="8000" y="800"/>
+  <object gid="8" x="8200" y="1000"/>
+  <object gid="8" x="8600" y="1200"/>
+  <object gid="8" x="9400" y="1300"/>
+  <object gid="8" x="9000" y="1400"/>
+  <object gid="8" x="9400" y="900"/>
+  <object gid="8" x="9000" y="900"/>
+  <object gid="8" x="10400" y="1300"/>
+  <object gid="8" x="10400" y="1000"/>
+  <object gid="8" x="10000" y="1100"/>
+  <object gid="8" x="10000" y="1300"/>
+  <object gid="8" x="11200" y="1300"/>
+  <object gid="8" x="11200" y="1200"/>
+  <object gid="8" x="11000" y="800"/>
+  <object gid="8" x="11400" y="1500"/>
+  <object gid="8" x="12000" y="1400"/>
+  <object gid="8" x="12200" y="1200"/>
+  <object gid="8" x="12400" y="900"/>
+  <object gid="8" x="12600" y="1200"/>
+  <object gid="8" x="13400" y="1100"/>
+  <object gid="8" x="13800" y="900"/>
+  <object gid="8" x="15000" y="1100"/>
+  <object gid="8" x="15600" y="1000"/>
+  <object gid="8" x="15800" y="800"/>
+  <object gid="8" x="15800" y="1200"/>
+ </objectgroup>
+ <objectgroup name="LandGerm" width="80" height="20">
+  <object gid="10" x="3800" y="1400"/>
+  <object gid="10" x="5000" y="1500"/>
+  <object gid="10" x="7000" y="1600"/>
+  <object gid="10" x="8800" y="1500"/>
+  <object gid="10" x="11800" y="1500"/>
+  <object gid="10" x="14000" y="1100"/>
+  <object gid="10" x="14800" y="1100"/>
+ </objectgroup>
+</map>

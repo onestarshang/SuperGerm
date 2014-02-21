@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="20" tilewidth="100" tileheight="100">
+ <tileset firstgid="1" name="fence" tilewidth="50" tileheight="50">
+  <image source="rock.png" width="50" height="50"/>
+  <terraintypes>
+   <terrain name="新地形" tile="-1"/>
+  </terraintypes>
+ </tileset>
+ <tileset firstgid="2" name="germ" tilewidth="136" tileheight="136">
+  <image source="../../../../../../Documents/细胞素材/程序用/角色/germ.png" width="136" height="136"/>
+ </tileset>
+ <tileset firstgid="3" name="fireball" tilewidth="82" tileheight="128">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/fireball.png" width="82" height="128"/>
+ </tileset>
+ <tileset firstgid="4" name="landgerm" tilewidth="121" tileheight="154">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/landgerm.png" width="121" height="154"/>
+ </tileset>
+ <tileset firstgid="5" name="floor" tilewidth="100" tileheight="100">
+  <image source="tileMapFloor.png" width="700" height="100"/>
+  <tile id="0">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="12" name="Boss" tilewidth="350" tileheight="285">
+  <image source="../../../../../../Documents/细胞素材/程序用/角色/boss.png" width="350" height="285"/>
+ </tileset>
+ <tileset firstgid="13" name="megma" tilewidth="100" tileheight="100">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/megama.png" width="101" height="100"/>
+ </tileset>
+ <tileset firstgid="14" name="tileMap" tilewidth="100" tileheight="100">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/tileMap.png" width="512" height="512"/>
+ </tileset>
+ <layer name="map1" width="60" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztk1sKwCAMBP1R23r/+5aAgaVofFCo0h0YEPG1kThHCCGEEELI90QYH4N7fXYnPDia949gvVbCFyT7Ir2oPameHdbOWR155zVheihzpV5YoS8iKH/1Vl5LzYx3K1iPVs16xXtCdiZnK2+oaJ2ha5Kxv9cbrwMFPQ==
+  </data>
+ </layer>
+ <objectgroup name="FireBall" width="60" height="20">
+  <object gid="3" x="2300" y="1700"/>
+  <object gid="3" x="2500" y="1700"/>
+ </objectgroup>
+ <objectgroup name="Rock" width="60" height="20">
+  <object gid="1" x="1400" y="1100"/>
+  <object gid="1" x="3800" y="1000"/>
+  <object gid="1" x="1800" y="800"/>
+  <object gid="1" x="3000" y="1400"/>
+ </objectgroup>
+ <objectgroup name="Megama" width="60" height="20">
+  <object gid="13" x="2200" y="1700"/>
+  <object gid="13" x="2300" y="1700"/>
+  <object gid="13" x="2400" y="1700"/>
+  <object gid="13" x="2500" y="1700"/>
+  <object gid="13" x="3900" y="1900"/>
+  <object gid="13" x="4000" y="1900"/>
+  <object gid="13" x="4300" y="1900"/>
+ </objectgroup>
+ <objectgroup name="Boss" width="60" height="20">
+  <object gid="12" x="5500" y="1700"/>
+ </objectgroup>
+ <objectgroup name="Germ" width="60" height="20">
+  <object gid="2" x="800" y="1500"/>
+  <object gid="2" x="1800" y="1400"/>
+  <object gid="2" x="2700" y="1300"/>
+  <object gid="2" x="1900" y="900"/>
+  <object gid="2" x="2900" y="900"/>
+  <object gid="2" x="2400" y="1200"/>
+ </objectgroup>
+ <objectgroup name="LandGerm" width="60" height="20">
+  <object gid="4" x="500" y="1800"/>
+  <object gid="4" x="1600" y="1400"/>
+  <object gid="4" x="2000" y="1200"/>
+ </objectgroup>
+ <objectgroup name="DripGerm" width="60" height="20">
+  <object gid="35" x="1400" y="1500"/>
+  <object gid="35" x="2100" y="1300"/>
+  <object gid="35" x="3600" y="1400"/>
+ </objectgroup>
+ <objectgroup name="Thorn" width="60" height="20">
+  <object gid="17" x="1000" y="1600"/>
+  <object gid="17" x="5000" y="1800"/>
+  <object gid="17" x="5500" y="1800"/>
+ </objectgroup>
+</map>

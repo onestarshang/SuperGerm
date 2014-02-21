@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="20" tilewidth="100" tileheight="100">
+ <tileset firstgid="1" name="fence" tilewidth="50" tileheight="50">
+  <image source="rock.png" width="50" height="50"/>
+  <terraintypes>
+   <terrain name="新地形" tile="-1"/>
+  </terraintypes>
+ </tileset>
+ <tileset firstgid="2" name="germ" tilewidth="136" tileheight="136">
+  <image source="../../../../../../Documents/细胞素材/程序用/角色/germ.png" width="136" height="136"/>
+ </tileset>
+ <tileset firstgid="3" name="fireball" tilewidth="82" tileheight="128">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/fireball.png" width="82" height="128"/>
+ </tileset>
+ <tileset firstgid="4" name="landgerm" tilewidth="121" tileheight="154">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/landgerm.png" width="121" height="154"/>
+ </tileset>
+ <tileset firstgid="5" name="floor" tilewidth="100" tileheight="100">
+  <image source="tileMapFloor.png" width="700" height="100"/>
+  <tile id="0">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="floor" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="12" name="Boss" tilewidth="350" tileheight="285">
+  <image source="../../../../../../Documents/细胞素材/程序用/角色/boss.png" width="350" height="285"/>
+ </tileset>
+ <tileset firstgid="13" name="megma" tilewidth="100" tileheight="100">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/megama.png" width="101" height="100"/>
+ </tileset>
+ <tileset firstgid="14" name="tileMap" tilewidth="100" tileheight="100">
+  <image source="../../../../../../Documents/细胞素材/程序用/地图障碍/tileMap.png" width="512" height="512"/>
+ </tileset>
+ <layer name="map1" width="60" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztlOsKgCAMRvfHW77/+4bkYI1aakEK34ED3ZZ+LSUCAAAAAADgf4I6Tx21rroSTqnzgzPyW82E7uNs8wN9RDp6GIWpQc0q/0LJtw2YleXa1VqYYV0EYenVV3kt5b7Oci3fk8dvleP46kjOp7z+Rusd/Ew26lvdAfJvBWA=
+  </data>
+ </layer>
+ <objectgroup name="Thorn" width="60" height="20">
+  <object gid="17" x="1000" y="1600"/>
+  <object gid="17" x="0" y="1900"/>
+  <object gid="17" x="100" y="1900"/>
+  <object gid="17" x="200" y="1900"/>
+  <object gid="17" x="300" y="1900"/>
+  <object gid="17" x="400" y="1900"/>
+ </objectgroup>
+ <objectgroup name="Boss" width="60" height="20">
+  <object gid="30" x="5900" y="1800"/>
+ </objectgroup>
+</map>
