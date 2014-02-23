@@ -21,6 +21,7 @@
         WAITINGMODELLASTTIME = 2;
         self.health = 100;
         _isReadyToAttack = YES;
+        self.awakeDistance = SCREEN.width/2;
     }
     return self;
 }

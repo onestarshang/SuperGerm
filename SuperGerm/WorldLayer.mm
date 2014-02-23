@@ -28,6 +28,7 @@
     CCTMXTiledMap* _tileMap;
     CCLayer* mapLayer;
     CCLayer* actionSpriteLayer;
+    int lastPlayerDirection;
 }
 
 static b2World *_world;
@@ -37,24 +38,20 @@ static b2World *_world;
     {
         [self initPhysics];
         
-        CGSize winSize = [[CCDirector sharedDirector] winSize];
-        
         mapLayer = [[CCLayer alloc] init];
         actionSpriteLayer = [[CCLayer alloc] init];
-        
+        CCLayer *playerLayer = [[CCLayer alloc] init];
+
+
         [self addChild:mapLayer];
         [self addChild:actionSpriteLayer];
+        [self addChild:playerLayer];
         
-//        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"animation.plist" ];
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"HeroAnimaiton1.plist" ];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"HeroAnimaiton2.plist" ];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hero.plist" ];
         
         _player = [[Player alloc] init];
-        _player.position = ccp(100, 20*16);//mapManager.mapSize.height);
+        _player.position = ccp(100, 30*50);//mapManager.mapSize.height);
         [_player setPhysicPosition];
-        [actionSpriteLayer addChild:_player];
+        [playerLayer addChild:_player];
         
         mapManager = [MapManager sharedMapManager];
         
@@ -189,7 +186,7 @@ const int WORLD_MOVE_SPEED = 150;
     CGSize winSize = [CCDirector sharedDirector].winSize;
     
     CGPoint actualPosition = position;
-    CGPoint centerOfView = ccpMult(ccp(winSize.width/3, winSize.height/2),1/self.scale);
+    CGPoint centerOfView = ccpMult(ccp(winSize.width/2-[ControlCenter player].scaleX*winSize.width/5, winSize.height/3),1/self.scale);
     CGPoint viewPoint = ccpMult(ccpSub(centerOfView, actualPosition), self.scale);
     
     if (position.x < mapManager.leftDownEdge.x + centerOfView.x) {
@@ -223,8 +220,24 @@ const int WORLD_MOVE_SPEED = 150;
 //    {
 //        self.position = viewPoint;
 //    }
+
+
+        if (([[[CCDirector sharedDirector] actionManager] numberOfRunningActionsInTarget:self] < 1)) {
+            if ([ControlCenter player].scaleX == lastPlayerDirection) {
+                self.position = viewPoint;
+            }
+            else
+            {
+                CCAction* move = [CCMoveTo actionWithDuration:0.4 position:viewPoint];
+                [self runAction:move];
+                lastPlayerDirection = [ControlCenter player].scaleX;
+            }
+        }
     
-    self.position = viewPoint;
+
+
+    
+//    self.position = viewPoint;
 }
 
 -(void) moveAndFocusOnPlayer:(CGPoint) playerTargetPos

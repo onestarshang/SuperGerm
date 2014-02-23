@@ -46,6 +46,7 @@ enum{
 @property (nonatomic,assign) int ATK;
 @property (nonatomic,assign) BOOL isMeetingRightNormalHit;
 @property (nonatomic,assign) BOOL isMeetingLeftNormalHit;
+@property (nonatomic)int awakeDistance;
 
 - (BOOL)isMeetingNormalHit;
 - (BOOL)isMeetingComboHit;

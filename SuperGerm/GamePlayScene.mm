@@ -78,7 +78,7 @@ static CCLayer *_popLayer;
 		[self setTouchEnabled:YES];
 
 //        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"background.plist"];
-        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"hero.plist" ];
         background1 = [CCSprite spriteWithFile:@"back1.png"];
         [self addChild:background1];
         [background1 setAnchorPoint:ccp(0, 0)];
@@ -193,7 +193,7 @@ static CCLayer *_popLayer;
 -(void) update:(ccTime)delta
 {
     [cell setTextureRect:CGRectMake(-world.position.x*0.4, 0, SCREEN.width,SCREEN.height)];
-    [cell setPosition:ccp(0, world.position.y*0.2+SCREEN.height/2)];
+    [cell setPosition:ccp(0, world.position.y*0.1+SCREEN.height/2)];
     
     [background1 setTextureRect:CGRectMake(-world.position.x*0.2, 0, SCREEN.width,SCREEN.height)];
     [background1 setPosition:ccp(0, 0+world.position.y*0.2)];

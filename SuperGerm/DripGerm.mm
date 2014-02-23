@@ -23,6 +23,7 @@
         self.health = 10;
         self.tag = 1;
         _isReadyToAttack = YES;
+        self.awakeDistance = SCREEN.width/2;
         self.ATK = 20;
         self.AIModel = WAITING_MODEL;
         WAITINGMODELLASTTIME = 1;
@@ -49,12 +50,25 @@
     if (self.AIModel == WAITING_MODEL) {
         _body->SetGravityScale(0);
     }
-    
-    _body->SetFixedRotation(YES);
-    oringinalPositon = self.position;
-    [self replaceBodyShape:_body withShapeName:@"dripgerm"];
-    [self setAwake:NO];
+    else
+    {
+        _body->SetFixedRotation(YES);
+        oringinalPositon = self.position;
+        [self replaceBodyShape:_body withShapeName:@"dripgerm"];
+        [self setAwake:NO];
+    }
 }
+
+-(void)setAwake:(BOOL) awake
+{
+    if (awake) {
+        [self playEnterAnimation];
+    }
+    
+    _awake = awake;
+    _body->SetAwake(awake);
+}
+
 
 
 - (void)enterCallback
@@ -122,7 +136,7 @@
     if (_germState != kState_Pre_Hitting && _germState != kState_Hitting) {
         _germState = kState_Pre_Hitting;
         AnimationWapper *actionProvider = [[[AnimationWapper alloc] init] autorelease];
-        CCAction *_preHitAction = [actionProvider actionWithPrefix:@"drip_pre_attack/" suffix:@".png" frame:3 frameDelay:0.1 target:self callback:@selector(perHitCallback)];
+        CCAction *_preHitAction = [actionProvider actionWithPrefix:@"drip_pre_attack/" suffix:@".png" frame:3 frameDelay:0.3 target:self callback:@selector(perHitCallback)];
         [self stopAllActions];
         [self runAction:_preHitAction];
     }
@@ -163,7 +177,7 @@
         self.AIModel = WAITING_MODEL;
         DripGerm *drip = [[DripGerm alloc] init];
         drip.AIModel = FLYING_MODEL;
-        [[GermManager sharedGermManager] addGerm:drip position:[self position]];
+        [[GermManager sharedGermManager] addGerm:drip position:ccp(self.position.x,self.position.y-30)];
         [drip playDripDorpAnimaion];
     }
     else if (self.AIModel == FLYING_MODEL && timeGap > FLYINGMODELLASTTIME)
@@ -194,5 +208,51 @@
         [self playPreHitAnimation];
     }
 }
+
+-(void)beginContactWithPlayer:(GB2Contact *)contact
+{
+    NSString *fixtureId = (NSString *)contact.otherFixture->GetUserData();
+    NSString *myFixtureId = (NSString*)contact.ownFixture->GetUserData();
+    
+    if ([fixtureId  isEqualToString: @"hurtSensor"] || [fixtureId isEqualToString:@"right_normal_hit"] || [fixtureId isEqualToString:@"left_normal_hit"]) {
+        _isMeetingPlayerbody = YES;
+    }
+     if ([myFixtureId isEqualToString:@"hurtSensor"] && [fixtureId isEqualToString:@"right_normal_hit"])
+    {
+        _isMeetingRightNormalHit = YES;
+    }
+    if ([myFixtureId isEqualToString:@"hurtSensor"] && [fixtureId isEqualToString:@"left_normal_hit"])
+    {
+        _isMeetingLeftNormalHit = YES;
+    }
+}
+
+-(void)endContactWithPlayer:(GB2Contact *)contact
+{
+    NSString *fixtureId = (NSString *)contact.otherFixture->GetUserData();
+    NSString *myFixtureId = (NSString*)contact.ownFixture->GetUserData();
+    //    Player *player = (Player *)contact.otherFixture->GetBody()->GetUserData();
+    
+    if ([fixtureId  isEqualToString: @"hurtSensor"] || [fixtureId isEqualToString:@"right_normal_hit"] || [fixtureId isEqualToString:@"left_normal_hit"]) {
+        _isMeetingPlayerbody = NO;
+    }
+    else if ([myFixtureId isEqualToString:@"hurtSensor"] && [fixtureId isEqualToString:@"right_normal_hit"])
+    {
+        _isMeetingRightNormalHit = NO;
+    }
+    else if ([myFixtureId isEqualToString:@"hurtSensor"] && [fixtureId isEqualToString:@"left_normal_hit"])
+    {
+        _isMeetingLeftNormalHit = NO;
+    }
+    
+}
+
+-(void)dealWithPlayer:(Player*)player
+{
+    if (_isMeetingPlayerbody && _germState == kState_Hitting) {
+        [player hurtWithDamage:self.ATK AccodingToActionSprite:self withType:1];
+    }
+}
+
 
 @end

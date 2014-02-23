@@ -39,4 +39,5 @@
 @property (nonatomic) BOOL isTouchingL;
 @property (nonatomic) CGPoint targetPostion;
 @property (nonatomic,retain) CCSprite* hitEffect;
+@property (nonatomic)int contactFloorCount;
 @end

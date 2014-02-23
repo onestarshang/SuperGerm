@@ -17,6 +17,7 @@
     {
         _germState = kState_NOthing;
         self.health = 10;
+        self.awakeDistance = SCREEN.width/2;
         self.tag = 1;
         _isReadyToAttack = YES;
         _direction = 1;

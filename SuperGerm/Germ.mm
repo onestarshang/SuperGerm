@@ -30,10 +30,12 @@
         self.tag = 1;
         _isReadyToAttack = YES;
         self.ATK = 20;
+        self.awakeDistance = SCREEN.width/2;
         _AIModel = WAITING_MODEL;
         flyingDirection = 1;
         WAITINGMODELLASTTIME = 1;
         FLYINGMODELLASTTIME = 3;
+        _awake = NO;
     }
     
     return self;

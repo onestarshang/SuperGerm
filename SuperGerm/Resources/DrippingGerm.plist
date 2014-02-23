@@ -7,652 +7,652 @@
             <key>drip_attack/1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,240},{53,35}}</string>
+                <string>{{2,382},{106,68}}</string>
                 <key>offset</key>
-                <string>{0,-2}</string>
+                <string>{-1,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,4},{53,35}}</string>
+                <string>{{11,10},{106,68}}</string>
                 <key>sourceSize</key>
-                <string>{65,39}</string>
+                <string>{130,78}</string>
             </dict>
             <key>drip_attack/2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{61,2},{57,39}}</string>
+                <string>{{234,2},{112,76}}</string>
                 <key>offset</key>
-                <string>{-2,0}</string>
+                <string>{-4,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,0},{57,39}}</string>
+                <string>{{5,2},{112,76}}</string>
                 <key>sourceSize</key>
-                <string>{65,39}</string>
+                <string>{130,78}</string>
             </dict>
             <key>drip_attack/3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{57,39}}</string>
+                <string>{{348,2},{110,78}}</string>
                 <key>offset</key>
-                <string>{-2,0}</string>
+                <string>{-3,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,0},{57,39}}</string>
+                <string>{{7,0},{110,78}}</string>
                 <key>sourceSize</key>
-                <string>{65,39}</string>
+                <string>{130,78}</string>
             </dict>
             <key>drip_drop/1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{114,236},{29,54}}</string>
+                <string>{{450,104},{58,106}}</string>
                 <key>offset</key>
-                <string>{-1,-4}</string>
+                <string>{-1,-8}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{13,8},{29,54}}</string>
+                <string>{{27,17},{58,106}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,223},{33,54}}</string>
+                <string>{{222,358},{66,108}}</string>
                 <key>offset</key>
-                <string>{1,-3}</string>
+                <string>{2,-6}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{13,7},{33,54}}</string>
+                <string>{{26,14},{66,108}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{53,367},{41,42}}</string>
+                <string>{{416,622},{82,82}}</string>
                 <key>offset</key>
-                <string>{1,-10}</string>
+                <string>{2,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{9,20},{41,42}}</string>
+                <string>{{18,42},{82,82}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{104,337},{41,42}}</string>
+                <string>{{416,538},{82,82}}</string>
                 <key>offset</key>
-                <string>{1,-10}</string>
+                <string>{2,-21}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{9,20},{41,42}}</string>
+                <string>{{18,42},{82,82}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{159,315},{49,34}}</string>
+                <string>{{202,562},{98,68}}</string>
                 <key>offset</key>
-                <string>{3,-14}</string>
+                <string>{5,-28}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{7,28},{49,34}}</string>
+                <string>{{13,56},{98,68}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,333},{49,34}}</string>
+                <string>{{102,582},{98,66}}</string>
                 <key>offset</key>
-                <string>{3,-14}</string>
+                <string>{5,-29}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{7,28},{49,34}}</string>
+                <string>{{13,58},{98,66}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{113,267},{53,32}}</string>
+                <string>{{110,446},{104,62}}</string>
                 <key>offset</key>
-                <string>{2,-15}</string>
+                <string>{5,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{4,30},{53,32}}</string>
+                <string>{{10,62},{104,62}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{113,267},{53,32}}</string>
+                <string>{{110,446},{104,62}}</string>
                 <key>offset</key>
-                <string>{2,-15}</string>
+                <string>{5,-31}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{4,30},{53,32}}</string>
+                <string>{{10,62},{104,62}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/17.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{53,331},{49,34}}</string>
+                <string>{{316,560},{98,68}}</string>
                 <key>offset</key>
-                <string>{2,-14}</string>
+                <string>{4,-28}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,28},{49,34}}</string>
+                <string>{{12,56},{98,68}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/18.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{108,301},{49,34}}</string>
+                <string>{{316,490},{98,68}}</string>
                 <key>offset</key>
-                <string>{2,-14}</string>
+                <string>{4,-28}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,28},{49,34}}</string>
+                <string>{{12,56},{98,68}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/19.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{219,277},{49,34}}</string>
+                <string>{{2,524},{98,68}}</string>
                 <key>offset</key>
-                <string>{2,-14}</string>
+                <string>{4,-28}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,28},{49,34}}</string>
+                <string>{{12,56},{98,68}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,369},{41,38}}</string>
+                <string>{{302,630},{80,76}}</string>
                 <key>offset</key>
-                <string>{-2,-12}</string>
+                <string>{-3,-24}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,24},{41,38}}</string>
+                <string>{{14,48},{80,76}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/20.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{168,277},{49,36}}</string>
+                <string>{{102,510},{98,70}}</string>
                 <key>offset</key>
-                <string>{2,-13}</string>
+                <string>{4,-27}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,26},{49,36}}</string>
+                <string>{{12,54},{98,70}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/21.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,295},{49,36}}</string>
+                <string>{{216,490},{98,70}}</string>
                 <key>offset</key>
-                <string>{2,-13}</string>
+                <string>{4,-27}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,26},{49,36}}</string>
+                <string>{{12,54},{98,70}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/22.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{57,293},{49,36}}</string>
+                <string>{{2,452},{98,70}}</string>
                 <key>offset</key>
-                <string>{2,-13}</string>
+                <string>{4,-27}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,26},{49,36}}</string>
+                <string>{{12,54},{98,70}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{226,132},{51,24}}</string>
+                <string>{{460,2},{100,48}}</string>
                 <key>offset</key>
-                <string>{-1,-19}</string>
+                <string>{-1,-38}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{2,38},{51,24}}</string>
+                <string>{{6,76},{100,48}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{179,2},{57,20}}</string>
+                <string>{{118,2},{114,38}}</string>
                 <key>offset</key>
-                <string>{0,-21}</string>
+                <string>{0,-43}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,42},{57,20}}</string>
+                <string>{{0,86},{114,38}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{120,2},{57,20}}</string>
+                <string>{{2,2},{114,38}}</string>
                 <key>offset</key>
-                <string>{0,-21}</string>
+                <string>{0,-43}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,42},{57,20}}</string>
+                <string>{{0,86},{114,38}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,328},{41,42}}</string>
+                <string>{{2,594},{78,82}}</string>
                 <key>offset</key>
-                <string>{1,-10}</string>
+                <string>{3,-20}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{9,20},{41,42}}</string>
+                <string>{{21,41},{78,82}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{210,328},{41,42}}</string>
+                <string>{{2,594},{78,82}}</string>
                 <key>offset</key>
-                <string>{1,-10}</string>
+                <string>{3,-20}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{9,20},{41,42}}</string>
+                <string>{{21,41},{78,82}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{58,223},{31,54}}</string>
+                <string>{{222,426},{62,108}}</string>
                 <key>offset</key>
-                <string>{1,1}</string>
+                <string>{2,2}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{14,3},{31,54}}</string>
+                <string>{{28,6},{62,108}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_drop/9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{58,223},{31,54}}</string>
+                <string>{{222,426},{62,108}}</string>
                 <key>offset</key>
-                <string>{1,1}</string>
+                <string>{2,2}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{14,3},{31,54}}</string>
+                <string>{{28,6},{62,108}}</string>
                 <key>sourceSize</key>
-                <string>{57,62}</string>
+                <string>{114,124}</string>
             </dict>
             <key>drip_pre_attack/1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{170,240},{53,35}}</string>
+                <string>{{2,382},{106,68}}</string>
                 <key>offset</key>
-                <string>{0,-2}</string>
+                <string>{-1,-5}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{6,4},{53,35}}</string>
+                <string>{{11,10},{106,68}}</string>
                 <key>sourceSize</key>
-                <string>{65,39}</string>
+                <string>{130,78}</string>
             </dict>
             <key>drip_pre_attack/2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,258},{53,35}}</string>
+                <string>{{442,430},{106,68}}</string>
                 <key>offset</key>
-                <string>{-1,-2}</string>
+                <string>{-2,-5}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{5,4},{53,35}}</string>
+                <string>{{10,10},{106,68}}</string>
                 <key>sourceSize</key>
-                <string>{65,39}</string>
+                <string>{130,78}</string>
             </dict>
             <key>drip_pre_attack/3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{58,256},{53,35}}</string>
+                <string>{{442,322},{106,68}}</string>
                 <key>offset</key>
-                <string>{1,-2}</string>
+                <string>{2,-5}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{7,4},{53,35}}</string>
+                <string>{{14,10},{106,68}}</string>
                 <key>sourceSize</key>
-                <string>{65,39}</string>
+                <string>{130,78}</string>
             </dict>
             <key>drip_standby/0.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{58,113},{54,36}}</string>
+                <string>{{2,172},{108,70}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{0,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,1},{54,36}}</string>
+                <string>{{4,4},{108,70}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
             </dict>
             <key>drip_standby/1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,113},{54,36}}</string>
+                <string>{{336,146},{108,70}}</string>
                 <key>offset</key>
-                <string>{0,0}</string>
+                <string>{-1,-1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{2,1},{54,36}}</string>
+                <string>{{3,4},{108,70}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
             </dict>
             <key>drip_standby/10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{118,94},{56,32}}</string>
+                <string>{{114,108},{110,62}}</string>
                 <key>offset</key>
-                <string>{-1,-1}</string>
+                <string>{-1,-3}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,4},{56,32}}</string>
+                <string>{{2,10},{110,62}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
             </dict>
             <key>drip_standby/11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,79},{56,32}}</string>
+                <string>{{2,108},{110,62}}</string>
                 <key>offset</key>
-                <string>{-1,-1}</string>
+                <string>{-1,-3}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,4},{56,32}}</string>
+                <string>{{2,10},{110,62}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
             </dict>
             <key>drip_standby/12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,79},{56,32}}</string>
+                <string>{{338,82},{110,62}}</string>
                 <key>offset</key>
-                <string>{-1,-1}</string>
+                <string>{-1,-3}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,4},{56,32}}</string>
+                <string>{{2,10},{110,62}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
             </dict>
             <key>drip_standby/13.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{176,60},{56,32}}</string>
+                <string>{{226,80},{110,64}}</string>
                 <key>offset</key>
-                <string>{-1,-2}</string>
+                <string>{-1,-3}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,5},{56,32}}</string>
+                <string>{{2,9},{110,64}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
             </dict>
             <key>drip_standby/14.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{60,43},{56,34}}</string>
+                <string>{{114,42},{110,64}}</string>
                 <key>offset</key>
-                <string>{-1,-1}</string>
+                <string>{-1,-3}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,3},{56,34}}</string>
+                <string>{{2,9},{110,64}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
             </dict>
             <key>drip_standby/15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,43},{56,34}}</string>
+                <string>{{2,42},{110,64}}</string>
                 <key>offset</key>
-                <string>{-1,-1}</string>
+                <string>{-1,-3}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,3},{56,34}}</string>
+                <string>{{2,9},{110,64}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
             </dict>
             <key>drip_standby/16.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{178,24},{56,34}}</string>
-                <key>offset</key>
-                <string>{-1,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,3},{56,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/17.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{170,204},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/18.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{114,200},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/19.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{58,187},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/2.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,187},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/20.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{170,168},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/21.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{176,94},{54,36}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,1},{54,36}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/3.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{114,164},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/4.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{58,151},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/5.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,151},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/6.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{170,132},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/7.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{114,128},{54,34}}</string>
-                <key>offset</key>
-                <string>{0,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{2,3},{54,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/8.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{120,24},{56,34}}</string>
-                <key>offset</key>
-                <string>{-1,-1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,3},{56,34}}</string>
-                <key>sourceSize</key>
-                <string>{58,38}</string>
-            </dict>
-            <key>drip_standby/9.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{118,60},{56,32}}</string>
+                <string>{{332,356},{108,66}}</string>
                 <key>offset</key>
                 <string>{-1,-2}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,5},{56,32}}</string>
+                <string>{{3,7},{108,66}}</string>
                 <key>sourceSize</key>
-                <string>{58,38}</string>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/17.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{332,288},{108,66}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,7},{108,66}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/18.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,288},{108,68}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,6},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/19.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{332,218},{108,68}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,6},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,244},{108,68}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,6},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/20.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,242},{108,68}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,6},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/21.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{226,146},{108,70}}</string>
+                <key>offset</key>
+                <string>{-1,-1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,4},{108,70}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,218},{108,68}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,6},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/4.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,172},{108,68}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,6},{108,68}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/5.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,314},{108,66}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,7},{108,66}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/6.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,312},{108,66}}</string>
+                <key>offset</key>
+                <string>{-1,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,7},{108,66}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/7.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{112,380},{108,64}}</string>
+                <key>offset</key>
+                <string>{-1,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,9},{108,64}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/8.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{332,424},{108,64}}</string>
+                <key>offset</key>
+                <string>{-1,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{3,9},{108,64}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
+            </dict>
+            <key>drip_standby/9.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{446,212},{108,64}}</string>
+                <key>offset</key>
+                <string>{-1,-3}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{3,9},{108,64}}</string>
+                <key>sourceSize</key>
+                <string>{116,76}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -662,9 +662,9 @@
             <key>realTextureFileName</key>
             <string>DrippingGerm.png</string>
             <key>size</key>
-            <string>{256,512}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:bdfcf91b91967958d0e170a9aa0601ba:49ae83a66efd58135239c06ccb62c97b:5c1b0580661bfcc1392b55f88c18f485$</string>
+            <string>$TexturePacker:SmartUpdate:ef93cf8cd4fb9c715d0e86f8b7403f5a:49ae83a66efd58135239c06ccb62c97b:bf0930dd91f719ea01432898bf61e43b$</string>
             <key>textureFileName</key>
             <string>DrippingGerm.png</string>
         </dict>

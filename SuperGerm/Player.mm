@@ -21,7 +21,6 @@ const int SPEED = 6;
 @implementation Player
 {
     b2Body *_body;
-    int contactFloorCount;
     int desireDirection;
     BOOL hitGerm;
     CCSprite* showAnimationBase;
@@ -42,7 +41,7 @@ const int SPEED = 6;
 
 -(id) init
 {
-    if ((self = [super initWithSpriteFrameName:@"playerAnimation2/standBy_0000"]))
+    if ((self = [super initWithSpriteFrameName:@"standby/1.png"]))
     {
 //        [self setAnchorPoint:ccp(0.3,0.2)];
         _playerState = kState_NOthing;
@@ -403,7 +402,8 @@ const int SPEED = 6;
 //            NSLog(@"_currentAttacType %d", _currentAttacType);
         
         _currentAttacHurt =  [hurtAmount[_currentAttacType] intValue];
-            [self replaceBodyShape:_body withShapeName:[NSString stringWithFormat:@"hit%d",_currentAttacType]];
+//            [self replaceBodyShape:_body withShapeName:[NSString stringWithFormat:@"hit",_currentAttacType]];
+                    [self replaceBodyShape:_body withShapeName:@"hit"];
             
             CCAction * hitAction;
             AnimationWapper *wapper = [[[AnimationWapper alloc] init] autorelease];
@@ -465,10 +465,11 @@ const int SPEED = 6;
 -(void) update:(ccTime)delta
 {
     b2Vec2 speed = _body->GetLinearVelocity();
-
+    
     if (self.isTouchingA) {
          [self playHitAnimation];
         self.isTouchingA = NO;
+        _body->SetLinearVelocity(b2Vec2(0,speed.y));
     }
     else if (self.isTouchingR)
     {
@@ -490,6 +491,7 @@ const int SPEED = 6;
     }
     else
     {
+        _body->SetLinearVelocity(b2Vec2(0,speed.y));
         [self playStandbyAnimation];
     }
     
@@ -611,20 +613,19 @@ const int SPEED = 6;
     NSString *otherFixtureId = (NSString *)contact.otherFixture->GetUserData();
     
     if ([fixtureId isEqualToString:@"player_body"]) {
-        contactFloorCount++;
+        self.contactFloorCount++;
     }
     
     if ([otherFixtureId isEqualToString:@"megma"] && [fixtureId isEqualToString:@"megmaSensor"]) {
         self.health = 0;
     }
-    
 }
 
 -(void) endContactWithMapElement:(GB2Contact*)contact
 {
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
     if ([fixtureId isEqualToString:@"player_body"]) {
-        contactFloorCount--;
+        self.contactFloorCount--;
     }
 }
 
@@ -659,10 +660,10 @@ bool poweradded = NO;
     }
     else
     {
-        b2Vec2 gravity = [WorldLayer world]->GetGravity();
-        if (contactFloorCount > 0 && power<0.15) {
+//        b2Vec2 gravity = [WorldLayer world]->GetGravity();
+        if (self.contactFloorCount > 0 && power<0.15) {
             poweradded = NO;
-            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*sqrtf(-2*50*gravity.y/PTM_RATIO)), _body->GetWorldCenter());
+            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*4), _body->GetWorldCenter());
             //            NSLog(@"======");
             [self playSmallJumpAnimaiton];
 //            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
@@ -670,7 +671,7 @@ bool poweradded = NO;
         else if (power>=0.15 && !poweradded)
         {
             poweradded = YES;
-            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*sqrtf(-2*100*gravity.y/PTM_RATIO)), _body->GetWorldCenter());
+            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*5.5), _body->GetWorldCenter());
             //            NSLog(@"++++");
             [self playBigJumpAnimaiton];
 //            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
@@ -704,16 +705,16 @@ bool poweradded = NO;
 -(void)onEnter
 {
     [super onEnter];
-    showAnimationBase = [CCSprite spriteWithSpriteFrameName:@"openShowAnimation/1.png"];
+    showAnimationBase = [CCSprite spriteWithSpriteFrameName:@"dustflow/1.png"];
     AnimationWapper* provider = [[[AnimationWapper alloc] init] autorelease];
-    CCAction* showAction = [provider actionWithPrefix:@"openShowAnimation/" suffix:@".png" frame:5 target:self callback:@selector(showAnimationCallback)];
+    CCAction* showAction = [provider actionWithPrefix:@"dustflow/" suffix:@".png" frame:9 target:self callback:@selector(showAnimationCallback)];
     [showAnimationBase runAction:showAction];
     [self addChild:showAnimationBase];
 }
 
 -(void)dealloc
 {
-    [super  dealloc];
+    [super dealloc];
 }
 
 -(void)hitEffectCallBack
@@ -755,7 +756,7 @@ bool poweradded = NO;
     
     [[ControlCenter germManager]  bombPlayed];
     
-    _body->ApplyForceToCenter(b2Vec2(50,0));
+    _body->ApplyForceToCenter(b2Vec2(_body->GetMass()*500,0));
 }
 
 
@@ -763,6 +764,7 @@ bool poweradded = NO;
 -(void)resetBodyPhisic
 {
 //    _body->SetLinearDamping(5);
+    _body->SetLinearDamping(0);
     _body->SetGravityScale(2);
     [self unschedule:@selector(playBodyBombUpdate)];
     _invincible = NO;

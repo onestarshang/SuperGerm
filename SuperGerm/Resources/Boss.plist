@@ -7,28 +7,28 @@
             <key>Boss_1/jump/1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,147},{171,129}}</string>
+                <string>{{2,289},{342,255}}</string>
                 <key>offset</key>
-                <string>{-1,7}</string>
+                <string>{-3,14}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{1,0},{171,129}}</string>
+                <string>{{1,1},{342,255}}</string>
                 <key>sourceSize</key>
-                <string>{175,143}</string>
+                <string>{350,285}</string>
             </dict>
             <key>Boss_1/standBy/1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{175,143}}</string>
+                <string>{{2,2},{350,285}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{175,143}}</string>
+                <string>{{0,0},{350,285}}</string>
                 <key>sourceSize</key>
-                <string>{175,143}</string>
+                <string>{350,285}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -38,9 +38,9 @@
             <key>realTextureFileName</key>
             <string>Boss.png</string>
             <key>size</key>
-            <string>{256,512}</string>
+            <string>{512,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:bcc611c4e7a85e024bb734579b2234a2:4b256bddf0bd1182c31f38db7399d16a:9f4ff342f5a6b562ad1833ebf9f9d4a8$</string>
+            <string>$TexturePacker:SmartUpdate:90a2a8e0a9a4d6ea0cc79b2d128a0756:4b256bddf0bd1182c31f38db7399d16a:21cfae9c2ef8294adacbc5cfc054a3e6$</string>
             <key>textureFileName</key>
             <string>Boss.png</string>
         </dict>

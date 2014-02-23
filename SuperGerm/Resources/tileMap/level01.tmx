@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="32" tilewidth="100" tileheight="100">
+ <tileset firstgid="1" name="tileMap" tilewidth="100" tileheight="100">
+  <image source="tileMap.png" width="512" height="512"/>
+  <tile id="0">
+   <properties>
+    <property name="floor" value="ture"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="" value=""/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="map1" width="60" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzlWNFuwyAMRInUFzYpL/n/X62i1pp3OxvHwBKpJ1mhJDU+bGygllJqmYOHkgjWhq56Uh+iKpmBjG0WZ9ElnLP2zOSbhce5x16ZK+v/C/mNfbPQ8nMGOkayXEbPwaFrLy++jHOGr9h4x3gWe4STxTuruyc+erEo2d5i5fQRnHvzHcO38w5jX8835l9mUy/n0fUI+bTW9lm+B3o4t/KzQHLIDm3JKxqefxHIUc+/F3MyZssWNp7o38rvtSS6FrCDSRbo3yjfA2vCFowlSypp6+dXUmrhMS0ic77BU9qMs+Q9htb6seYd48/7hr2zxrF0Wvoeb85MH4PF6W7i+aOWHz/rvjvyjcLiqftW6L8T30hNYHZasc44a+i1foVv0f5RkNjGumSN2xuHZ2rvDAinA6wWZzlbuJovAjnf8Xw0GprzJ/A9IJxb9eo/sBGZAazRI7CU8+cXrCkzebf2XyPA5kD3sTqK3KPjyFmH7bmx/l4FrBFs7xiBd87p2duNhuffSOzpu7jo2WNmPLdg+TTKN/I98r6Sr+XTyFrbyt85YmAxdBU8v0bWWiQWvPMx3gnpPMfuGSL3Rh6sfKVzy06E3d9KTkfbmX/ljsU7I7JYk2f2TsfLUxb/VjywtvWtx43pG3U2bK1hy26Lg6XjCYDGHPE=
+  </data>
+ </layer>
+ <objectgroup name="FireBall" width="60" height="32">
+  <object gid="7" x="2700" y="2200"/>
+  <object gid="7" x="2200" y="2100"/>
+  <object gid="7" x="3000" y="600"/>
+ </objectgroup>
+ <objectgroup name="Rock" width="60" height="32">
+  <object gid="8" x="3100" y="1600"/>
+ </objectgroup>
+ <objectgroup name="Megama" width="60" height="32">
+  <object gid="9" x="1800" y="3000"/>
+  <object gid="9" x="1900" y="3000"/>
+  <object gid="9" x="2000" y="3000"/>
+  <object gid="9" x="2100" y="3000"/>
+  <object gid="9" x="2200" y="3000"/>
+  <object gid="9" x="2300" y="3000"/>
+  <object gid="9" x="2400" y="3000"/>
+  <object gid="9" x="2500" y="3000"/>
+  <object gid="9" x="2600" y="3000"/>
+  <object gid="9" x="2700" y="3000"/>
+  <object gid="9" x="2800" y="3000"/>
+  <object gid="9" x="2900" y="3000"/>
+  <object gid="9" x="3000" y="3000"/>
+  <object gid="9" x="3100" y="3000"/>
+  <object gid="9" x="200" y="3000"/>
+  <object gid="9" x="300" y="3000"/>
+  <object gid="9" x="1700" y="1100"/>
+  <object gid="9" x="1800" y="1100"/>
+  <object gid="9" x="1900" y="1100"/>
+  <object gid="9" x="2000" y="1100"/>
+  <object gid="9" x="2100" y="1100"/>
+  <object gid="9" x="2200" y="1100"/>
+  <object gid="9" x="2300" y="1100"/>
+  <object gid="9" x="2400" y="1100"/>
+  <object gid="9" x="2500" y="1100"/>
+  <object gid="9" x="2600" y="1100"/>
+  <object gid="9" x="2700" y="1100"/>
+  <object gid="9" x="2800" y="1100"/>
+  <object gid="9" x="2900" y="1100"/>
+  <object gid="9" x="3000" y="1100"/>
+ </objectgroup>
+ <objectgroup name="Boss" width="60" height="32">
+  <object gid="17" x="500" y="2900"/>
+ </objectgroup>
+ <objectgroup name="Germ" width="60" height="32">
+  <object gid="5" x="3800" y="200"/>
+  <object gid="5" x="3400" y="300"/>
+  <object gid="5" x="4400" y="700"/>
+  <object gid="5" x="5200" y="600"/>
+  <object gid="5" x="5300" y="700"/>
+  <object gid="5" x="4900" y="1900"/>
+  <object gid="5" x="4700" y="2000"/>
+  <object gid="5" x="3100" y="1900"/>
+  <object gid="5" x="3000" y="2000"/>
+ </objectgroup>
+ <objectgroup name="LandGerm" width="60" height="32"/>
+ <objectgroup name="DripGerm" width="60" height="32">
+  <object gid="22" x="1648" y="497"/>
+  <object gid="22" x="5500" y="2600"/>
+  <object gid="22" x="4400" y="1600"/>
+  <object gid="22" x="5200" y="1800"/>
+  <object gid="22" x="2400" y="200"/>
+  <object gid="22" x="4500" y="500"/>
+ </objectgroup>
+ <objectgroup name="Thorn" width="60" height="32">
+  <object gid="4" x="3303" y="2120"/>
+  <object gid="4" x="5301" y="2316"/>
+ </objectgroup>
+ <objectgroup name="MovingPlatform" width="60" height="32">
+  <object gid="1" x="4100" y="2500"/>
+  <object gid="1" x="5500" y="500"/>
+ </objectgroup>
+</map>

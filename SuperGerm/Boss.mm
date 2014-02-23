@@ -32,9 +32,12 @@
         _isReadyToAttack = YES;
         self.ATK = 100;
         direction = -1;
+        self.awakeDistance = SCREEN.width/2;
         
-        WAITINGMODELLASTTIME = 3;
-        FLYINGMODELLASTTIME = 3;
+        WAITINGMODELLASTTIME = 1;
+        FLYINGMODELLASTTIME = 1;
+        
+        _awake = NO;
     }
     
     return self;
@@ -52,7 +55,7 @@
     _body->SetFixedRotation(YES);
 //    oringinalPositon = self.position;
     [self replaceBodyShape:_body withShapeName:@"boss"];
-    [self setAwake:YES];
+//    [self setAwake:YES];
 }
 
 -(void) keepAwayFrom:(CCSprite *)player withMapXrange:(MapXRange) mapXRange hitType:(int)hitType
@@ -108,12 +111,17 @@
     }
     
     if (self.AIModel == WAITING_MODEL) {
-        [self playStandByAnimation];
-        if (jumpCount == 2) {
-            direction *= -1;
-            [self setScaleX:-direction];
-            jumpCount = 0;
+        direction = -1;
+        if (self.position.x < player.position.x) {
+            direction = 1;
         }
+        [self setScaleX:-direction];
+        [self playStandByAnimation];
+//        if (jumpCount == 2) {
+//            direction *= -1;
+//            [self setScaleX:-direction];
+//            jumpCount = 0;
+//        }
 
         //        return;
     }
@@ -127,17 +135,17 @@
         if (!impluseAdd) {
             impluseAdd = YES;
             
-            _body->ApplyLinearImpulse(b2Vec2(direction*_body->GetMass()*2,_body->GetMass()*4), _body->GetWorldCenter());
+            _body->ApplyLinearImpulse(b2Vec2(direction*_body->GetMass()*2*5,_body->GetMass()*6*5), _body->GetWorldCenter());
             jumpCount++;
         }
         
         
 //        _body->ApplyForceToCenter(b2Vec2(-10,100));
         
-        b2Vec2 speed = _body->GetLinearVelocity();
-        if (speed.y < 0.5 && speed.y > 0) {
-            _body->ApplyLinearImpulse(b2Vec2(0,-_body->GetMass()*50), _body->GetWorldCenter());
-        }
+//        b2Vec2 speed = _body->GetLinearVelocity();
+//        if (speed.y < 0.5 && speed.y > 0) {
+//            _body->ApplyLinearImpulse(b2Vec2(0,-_body->GetMass()*50), _body->GetWorldCenter());
+//        }
         
         [self playJumpAnimation];
     }
@@ -185,6 +193,17 @@
     }
    
 }
+
+-(void)setAwake:(BOOL) awake
+{
+    if (awake) {
+        [self playEnterAnimation];
+    }
+    
+    _awake = awake;
+    _body->SetAwake(awake);
+}
+
 
 
 -(void) update:(ccTime)delta

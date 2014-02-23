@@ -134,7 +134,7 @@ int mapSection[5] = {1800,2800,3300,4000,4500 };
 //    }
     
     NSString *mapName = [NSString stringWithFormat:@"level%d.tmx",_level];
-    mapName = @"level5.tmx";
+    mapName = @"level01.tmx";
     
     MapElement* element = [[[MapElement alloc] initWithMapName:mapName withPositon:ccp([self mapSize].width, 0) withHeight:currentMapHeight] autorelease];
     _mapSize = CGSizeMake(_mapSize.width+element.size.width, max(_mapSize.height, element.size.height));

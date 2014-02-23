@@ -82,7 +82,7 @@
   <object gid="13" x="4300" y="1900"/>
  </objectgroup>
  <objectgroup name="Boss" width="60" height="20">
-  <object gid="12" x="5500" y="1700"/>
+  <object gid="30" x="5800" y="1700"/>
  </objectgroup>
  <objectgroup name="Germ" width="60" height="20">
   <object gid="2" x="800" y="1500"/>
@@ -103,7 +103,7 @@
   <object gid="35" x="3600" y="1400"/>
  </objectgroup>
  <objectgroup name="Thorn" width="60" height="20">
-  <object gid="17" x="1000" y="1600"/>
+  <object gid="17" x="900" y="1600"/>
   <object gid="17" x="5000" y="1800"/>
   <object gid="17" x="5500" y="1800"/>
  </objectgroup>

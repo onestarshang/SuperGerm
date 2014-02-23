@@ -191,11 +191,11 @@
                 if (properties) {
                     NSString *isFloor = properties[@"floor"];
                     NSString* isMegma = properties[@"megma"];
-                    if (isFloor && [isFloor isEqualToString:@"True"])
+                    if (isFloor && [isFloor isEqualToString:@"true"])
                     {
                         [self addPhysicFloor:ccp(col, raw) withPhysicName:@"floor"];
                     }
-                    else if(isMegma && [isMegma isEqualToString:@"True"])
+                    else if(isMegma && [isMegma isEqualToString:@"true"])
                     {
                         [self addPhysicFloor:ccp(col, raw) withPhysicName:@"megma"];
 //                        if (!megmaAdded) {

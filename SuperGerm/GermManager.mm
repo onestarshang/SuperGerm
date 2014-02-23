@@ -83,7 +83,7 @@ const int germCount = 12;
                 int x = [object[@"x"] integerValue];
                 int y = [object[@"y"] integerValue];
                 
-                NSLog(@"%@ Position: x=%d,y=%d",groupName,x,y);
+//                NSLog(@"%@ Position: x=%d,y=%d",groupName,x,y);
                 
                 Germ *germ = (Germ*)obj;
                 [_parent addChild:germ];
@@ -104,7 +104,7 @@ const int germCount = 12;
         Germ *germ = [_germs objectAtIndex:i];
         if (germ.health > 0) {
             
-            if (fabs(germ.position.x - _player.position.x) < SCREEN.width*2/3 && ![germ isAwake])
+            if (fabs(germ.position.x - _player.position.x) < germ.awakeDistance && ![germ isAwake])
             {
                 [germ setAwake:YES];
 
