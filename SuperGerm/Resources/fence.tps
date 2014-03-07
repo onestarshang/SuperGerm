@@ -171,6 +171,7 @@
             <filename>../../../../../Documents/细胞素材/程序用/地图障碍/fireballAnimation</filename>
             <filename>../../../../../Documents/细胞素材/程序用/地图障碍/thorn</filename>
             <filename>../../../../../Documents/细胞素材/程序用/地图障碍/movingplatform.png</filename>
+            <filename>../../../../../Documents/细胞素材/程序用/地图障碍/goldcoin.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

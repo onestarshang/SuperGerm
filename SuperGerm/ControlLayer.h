@@ -19,4 +19,5 @@
 @interface ControlLayer : CCLayer<CCJoyStickDelegate>
 @property(nonatomic,strong)id <SimpleDPadDelegate> delegate;
 - (void)setControlEnable:(BOOL)enable;
+- (void)updateHitProgress:(float)progress;
 @end

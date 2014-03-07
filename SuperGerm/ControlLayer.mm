@@ -20,6 +20,10 @@
     CCMenuItem *_resumeItem;
     
     CCJoyStick* joyStick;
+    
+    CCProgressTimer *hitProgress;
+    
+    CCMenu *bigHit;
 }
 
 -(id) init
@@ -45,27 +49,49 @@ NSMutableArray *controlItems;
     [self addJumpButton];
     [self addHitButton];
     [self addPauseButton];
+    [self addHitProgress];
 //    [self addBigAttackButton];
     
     
     [self scheduleUpdate];
 }
 
+- (void)addHitProgress
+{
+    CCSprite *hitProgressBack = [CCSprite spriteWithSpriteFrameName:@"hitProgressBack.png"];
+    [self addChild:hitProgressBack];
+    [hitProgressBack setAnchorPoint:ccp(0.5, 0.5)];
+    hitProgressBack.position = ccp(SCREEN.width/2 - 50, [hitProgressBack contentSize].height);
+    [hitProgressBack setScale:0.5];
+    
+    hitProgress = [CCProgressTimer progressWithSprite:[CCSprite spriteWithSpriteFrameName:@"hitProgress.png"]];
+    [self addChild:hitProgress];
+    [hitProgress setType:kCCProgressTimerTypeBar];
+    [hitProgress setPercentage:100];
+    [hitProgress setMidpoint:ccp(0, 0.5)];
+    [hitProgress setBarChangeRate:ccp(1, 0)];
+    [hitProgress setPosition:ccpAdd(ccp(-10,0),ccp(hitProgressBack.position.x, hitProgressBack.position.y))];
+    [hitProgress setScale:0.5];
+    
+    [self addBigAttackButton];
+}
+
 -(void)bigAttacTapped:(id)sender
 {
     [_delegate controlCallBack:7 isBegin:YES];
-
+    [bigHit setEnabled:NO];
 }
 
 -(void)addBigAttackButton
 {
-    CCMenuItem *starMenuItem = [CCMenuItemImage
-                                itemWithNormalImage:@"hit_common.png" selectedImage:@"hit_common.png"
-                                target:self selector:@selector(bigAttacTapped:)];
-    starMenuItem.position = ccp(60, 180);
-    CCMenu *starMenu = [CCMenu menuWithItems:starMenuItem, nil];
-    starMenu.position = CGPointZero;
-    [self addChild:starMenu];
+    CCMenuItem *hitMenuItem = [[CCMenuItemImage alloc] initWithNormalSprite:[CCSprite spriteWithSpriteFrameName:@"bigHitButton.png"] selectedSprite:[CCSprite spriteWithSpriteFrameName:@"bigHitButton.png"] disabledSprite:[CCSprite spriteWithSpriteFrameName:@"bigHitButton.png"] target:self selector:@selector(bigAttacTapped:)];
+    hitMenuItem.position = ccp(SCREEN.width/2 + 30, 0);
+    bigHit = [CCMenu menuWithItems:hitMenuItem, nil];
+    bigHit.position = CGPointZero;
+    [self addChild:bigHit];
+    [bigHit setPosition:ccp(0, -40)];
+    [bigHit setEnabled:NO];
+    [bigHit setScale:0.5];
 }
 
 -(void)addJumpButton
@@ -123,7 +149,7 @@ NSMutableArray *controlItems;
     CCMenuItemToggle *toggleItem = [CCMenuItemToggle itemWithTarget:self
                                                            selector:@selector(pauseButtonTapped:) items:_resumeItem,_pauseItem ,nil];
     CCMenu *toggleMenu = [CCMenu menuWithItems:toggleItem, nil];
-    toggleMenu.position = ccp(SCREEN.width/2, 25);
+    toggleMenu.position = ccp(SCREEN.width/2, SCREEN.height - 25);
     [self addChild:toggleMenu];
 }
 
@@ -163,6 +189,15 @@ float hitButtonHoldingTime;
     [joyStick setTouchEnabled:enable];
     hitButton.isToggleable = enable;
     jumpButton.isToggleable = enable;
+}
+
+- (void)updateHitProgress:(float)progress
+{
+    [hitProgress setPercentage:progress*100];
+    
+    if (progress >= 1) {
+        [bigHit setEnabled:YES];
+    }
 }
 
 @end

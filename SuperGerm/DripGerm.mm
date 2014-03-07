@@ -24,7 +24,7 @@
         self.tag = 1;
         _isReadyToAttack = YES;
         self.awakeDistance = SCREEN.width/2;
-        self.ATK = 20;
+        self.ATK = 0.5;
         self.AIModel = WAITING_MODEL;
         WAITINGMODELLASTTIME = 1;
         FLYINGMODELLASTTIME = 3;
@@ -44,7 +44,7 @@
     ballBodyDef.type = b2_dynamicBody;
     ballBodyDef.position.Set(self.position.x/PTM_RATIO, self.position.y/PTM_RATIO);
     ballBodyDef.userData = self;
-    ballBodyDef.linearDamping = 10;
+//    ballBodyDef.linearDamping = 10;
     _body = [WorldLayer world]->CreateBody(&ballBodyDef);
 //    _body->SetGravityScale(0);
     if (self.AIModel == WAITING_MODEL) {
@@ -52,6 +52,7 @@
     }
     else
     {
+        _body->SetGravityScale(2);
         _body->SetFixedRotation(YES);
         oringinalPositon = self.position;
         [self replaceBodyShape:_body withShapeName:@"dripgerm"];
@@ -171,7 +172,7 @@
         self.AIModel = PRODUCE_MODEL;
         timeGap = 0;
     }
-    else if (self.AIModel == PRODUCE_MODEL && timeGap > PRODUCELASTTIME && produceCount<3)
+    else if (self.AIModel == PRODUCE_MODEL && produceCount<3)
     {
         produceCount ++;
         self.AIModel = WAITING_MODEL;
@@ -179,6 +180,10 @@
         drip.AIModel = FLYING_MODEL;
         [[GermManager sharedGermManager] addGerm:drip position:ccp(self.position.x,self.position.y-30)];
         [drip playDripDorpAnimaion];
+        srand((unsigned)time(0));  //不加这句每次产生的随机数不变
+        int i = rand() % 2;
+        drip.dire = i>0?1:-1;
+        NSLog(@"drip germ direction %d",self.dire);
     }
     else if (self.AIModel == FLYING_MODEL && timeGap > FLYINGMODELLASTTIME)
     {
@@ -200,7 +205,7 @@
         b2Vec2 speed = _body->GetLinearVelocity();
         if (speed.y > -0.5)
         {
-            _body->ApplyForceToCenter(b2Vec2(_body->GetMass()*-10,0));
+            _body->ApplyForceToCenter(b2Vec2(_body->GetMass()*4*self.dire,0));
         }
     }
     else if (self.AIModel == READY_ATTACK_MODEL)

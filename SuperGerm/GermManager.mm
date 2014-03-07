@@ -10,6 +10,9 @@
 #import <objc/runtime.h>
 #import "CCBReader.h"
 #import "Boss.h"
+#import "GamePlayScene.h"
+#import "EndGameLayer.h"
+
 const int germCount = 12;
 
 @implementation GermManager
@@ -17,6 +20,7 @@ const int germCount = 12;
     CCNode *_parent;
     int score;
     int killNum;
+    BOOL endPanelAdded;
 }
 
 -(instancetype) init
@@ -26,6 +30,7 @@ const int germCount = 12;
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"germ.plist" ];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"enemy2.plist" ];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"DrippingGerm.plist" ];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"BulletGerm.plist" ];
     }
     return self;
 }
@@ -76,10 +81,8 @@ const int germCount = 12;
             NSString* groupName = [objectGroup groupName];
             Class germClass = NSClassFromString(groupName);
             NSObject* obj = [[[germClass alloc] init] autorelease];
-            
             if (germClass && [obj isKindOfClass:[Germ class]])
             {
-                
                 int x = [object[@"x"] integerValue];
                 int y = [object[@"y"] integerValue];
                 
@@ -99,23 +102,49 @@ const int germCount = 12;
 -(void) update:(ccTime)delta withMapXrange:(MapXRange) mapXRange;
 {
     
+    if (_germs.count < 1) {
+        if (!endPanelAdded)
+        {
+            [ControlCenter player].visible = NO;
+            EndGameLayer* endGameLayer = (EndGameLayer*)[CCBReader nodeGraphFromFile:@"EndUI.ccbi"];
+            //        [endGameLayer setPosition:CENTER];
+            [endGameLayer setScore:[[ControlCenter germManager] getScore] setKillNum:[[ControlCenter germManager] getKillNum]];
+            
+            [[GamePlayScene popLayer] addChild:endGameLayer];
+            endPanelAdded = true;
+            [[GamePlayScene controlLayer] setControlEnable:NO];
+        }
+    }
+    
     for(int i=0;i<_germs.count;i++)
     {
         Germ *germ = [_germs objectAtIndex:i];
         if (germ.health > 0) {
             
-            if (fabs(germ.position.x - _player.position.x) < germ.awakeDistance && ![germ isAwake])
-            {
-                [germ setAwake:YES];
-
-            }
+//            if (fabs(germ.position.x - _player.position.x) < germ.awakeDistance && ![germ isAwake])
+//            {
+//                [germ setAwake:YES];
+//
+//            }
+//            
+//            if ([germ isAwake]) {
+////                [germ updatePosition:delta towards:_player];
+//                [germ update:delta];
+////                [_player dealWithGerm:germ withMapXrange:(MapXRange) mapXRange];
+////                [germ dealWithPlayer:_player];
+//            }
             
-            if ([germ isAwake]) {
-//                [germ updatePosition:delta towards:_player];
+            if ([germ isInScreen]) {
+                if (![germ isAwake]) {
+                    [germ setAwake:YES];
+                }
                 [germ update:delta];
-//                [_player dealWithGerm:germ withMapXrange:(MapXRange) mapXRange];
-//                [germ dealWithPlayer:_player];
             }
+//            else
+//            {
+//                [germ setAwake:NO];
+//            }
+
         }
         else
         {

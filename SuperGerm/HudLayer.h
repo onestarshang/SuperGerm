@@ -9,6 +9,7 @@
 #import "CCLayer.h"
 
 @interface HudLayer : CCLayer
--(void)updateHealthPercent:(float)percent;
--(void)updateScore:(int)score;
+- (void)updateHealthPercent:(float)percent;
+- (void)updateScore:(int)score;
+- (void)updateHealth:(float)health;
 @end

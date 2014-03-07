@@ -4,10 +4,62 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>Blood_0.5.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{831,1068},{138,118}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{138,118}}</string>
+                <key>sourceSize</key>
+                <string>{138,118}</string>
+            </dict>
+            <key>Blood_0.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{831,948},{138,118}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{138,118}}</string>
+                <key>sourceSize</key>
+                <string>{138,118}</string>
+            </dict>
+            <key>Blood_1.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{831,828},{138,118}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{138,118}}</string>
+                <key>sourceSize</key>
+                <string>{138,118}</string>
+            </dict>
+            <key>bigHitButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{721,410},{176,174}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{176,174}}</string>
+                <key>sourceSize</key>
+                <string>{176,174}</string>
+            </dict>
             <key>console.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{691,814},{128,128}}</string>
+                <string>{{828,1320},{128,128}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,11 +85,11 @@
             <key>end/heart.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{814,1023},{118,110}}</string>
+                <string>{{2,1888},{118,110}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{118,110}}</string>
                 <key>sourceSize</key>
@@ -46,7 +98,7 @@
             <key>end/recover_normal.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{721,410},{168,65}}</string>
+                <string>{{721,586},{168,65}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +111,7 @@
             <key>end/recover_pressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{721,477},{162,63}}</string>
+                <string>{{691,653},{162,63}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +163,7 @@
             <key>energyBack.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{870,549},{472,138}}</string>
+                <string>{{691,718},{472,138}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,11 +189,11 @@
             <key>hitEffect/01_02.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{934,1023},{84,89}}</string>
+                <string>{{891,600},{84,89}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{28,29},{84,89}}</string>
                 <key>sourceSize</key>
@@ -150,7 +202,7 @@
             <key>hitEffect/01_03.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{721,542},{140,147}}</string>
+                <string>{{855,686},{140,147}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +215,7 @@
             <key>hitEffect/01_04.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{691,684},{128,135}}</string>
+                <string>{{691,1192},{128,135}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -176,11 +228,11 @@
             <key>hitEffect/01_05.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{691,944},{114,121}}</string>
+                <string>{{2,1765},{114,121}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{13,13},{114,121}}</string>
                 <key>sourceSize</key>
@@ -189,20 +241,46 @@
             <key>hitEffect/01_06.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{891,410},{130,137}}</string>
+                <string>{{831,1188},{130,137}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{5,5},{130,137}}</string>
                 <key>sourceSize</key>
                 <string>{140,147}</string>
             </dict>
+            <key>hitProgress.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1001,357},{317,13}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{317,13}}</string>
+                <key>sourceSize</key>
+                <string>{317,13}</string>
+            </dict>
+            <key>hitProgressBack.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{958,1320},{443,56}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{443,56}}</string>
+                <key>sourceSize</key>
+                <string>{443,56}</string>
+            </dict>
             <key>pause_normal.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{786,1135},{93,93}}</string>
+                <string>{{899,505},{93,93}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -215,7 +293,7 @@
             <key>pause_pressed.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{691,1060},{93,93}}</string>
+                <string>{{899,410},{93,93}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -274,7 +352,7 @@
             <key>size</key>
             <string>{1024,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:9dff587ca6d8387d9bee681d5c954f4b:e3160a058f4a2fe853770da85727299e:f5577fabd50a2cba5e671b1303948d36$</string>
+            <string>$TexturePacker:SmartUpdate:6d67deb5bf66a8fc4aa7b510e021c283:4467438ae6d480d5c211ac85c9211486:f5577fabd50a2cba5e671b1303948d36$</string>
             <key>textureFileName</key>
             <string>ui-hd.png</string>
         </dict>

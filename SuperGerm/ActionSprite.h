@@ -26,7 +26,8 @@ typedef enum {
     kState_BigAttack = 9,
     kState_Faint = 10,
     KState_Growing = 11,
-    kState_Pre_Hitting = 12
+    kState_Pre_Hitting = 12,
+    kState_dying = 13
 }k_State;
 
 @interface ActionSprite : CCSprite

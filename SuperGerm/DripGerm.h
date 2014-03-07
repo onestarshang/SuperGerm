@@ -9,5 +9,5 @@
 #import "Germ.h"
 
 @interface DripGerm : Germ
-
+@property (nonatomic)int dire;
 @end

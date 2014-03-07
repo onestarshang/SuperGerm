@@ -27,7 +27,6 @@ const int SPEED = 6;
     BOOL isPlayingHitEffctAudio;
     BOOL _invincible;
     int _currentAttacType;
-    int _savedEnergy;
     float _lastAttackTime;
     BOOL _showingHitEffect;
     int _currentAttacHurt;
@@ -46,8 +45,8 @@ const int SPEED = 6;
 //        [self setAnchorPoint:ccp(0.3,0.2)];
         _playerState = kState_NOthing;
         
-        self.health = 1000;
-        self.totalHealth = 1000;
+        self.health = 3;
+        self.totalHealth = 3;
     
         self.tag = 0;
         _invincible = YES;
@@ -473,7 +472,8 @@ const int SPEED = 6;
     }
     else if (self.isTouchingR)
     {
-        if (_playerState != kState_Hitting && _playerState != kState_ComboHitting && _playerState != kState_BeingHurt) {
+//        _playerState != kState_Hitting &&
+        if ( _playerState != kState_BeingHurt) {
             _body->ApplyLinearImpulse(b2Vec2((SPEED*_body->GetMass() - speed.x*_body->GetMass()),0),_body->GetWorldCenter());
             [self playRunAnimation];
         }
@@ -482,7 +482,7 @@ const int SPEED = 6;
     }
     else if (self.isTouchingL)
     {
-        if (_playerState != kState_Hitting && _playerState != kState_ComboHitting && _playerState != kState_BeingHurt) {
+        if (_playerState != kState_BeingHurt) {
                 _body->ApplyLinearImpulse(b2Vec2((-SPEED*_body->GetMass() - speed.x*_body->GetMass()),0),_body->GetWorldCenter());
                 [self playRunAnimation];
             }
@@ -629,7 +629,7 @@ const int SPEED = 6;
     }
 }
 
--(void)hurtWithDamage:(int)damage AccodingToActionSprite:(ActionSprite *)actionSprite withType:(int)type
+-(void)hurtWithDamage:(float)damage AccodingToActionSprite:(ActionSprite *)actionSprite withType:(int)type
 {
     if (_playerState != kState_BeingHurt && !_invincible) {
         [self playHurtAnimation:type];
@@ -641,11 +641,11 @@ const int SPEED = 6;
         {
             desireDirection = 1;
         }
+//        
+//        AnimateLabel *label = [[[AnimateLabel alloc] init] autorelease];
+//        [label createBMLabelSting:[NSString stringWithFormat:@"-%f Health",damage] pistion:ccp(self.position.x + (self.scaleX*120),self.position.y + 100) parent:[GamePlayScene lebalLayer] withDuration:2];
         
-        AnimateLabel *label = [[[AnimateLabel alloc] init] autorelease];
-        [label createBMLabelSting:[NSString stringWithFormat:@"-%d Health",damage] pistion:ccp(self.position.x + (self.scaleX*120),self.position.y + 100) parent:[GamePlayScene lebalLayer] withDuration:2];
-        
-        self.health -=damage;
+        self.health -= damage;
     }
 }
 
@@ -663,7 +663,7 @@ bool poweradded = NO;
 //        b2Vec2 gravity = [WorldLayer world]->GetGravity();
         if (self.contactFloorCount > 0 && power<0.15) {
             poweradded = NO;
-            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*4), _body->GetWorldCenter());
+            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*3), _body->GetWorldCenter());
             //            NSLog(@"======");
             [self playSmallJumpAnimaiton];
 //            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
@@ -671,7 +671,7 @@ bool poweradded = NO;
         else if (power>=0.15 && !poweradded)
         {
             poweradded = YES;
-            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*5.5), _body->GetWorldCenter());
+            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*7), _body->GetWorldCenter());
             //            NSLog(@"++++");
             [self playBigJumpAnimaiton];
 //            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
@@ -695,11 +695,6 @@ bool poweradded = NO;
 -(int)currentAttacType
 {
     return _currentAttacType;
-}
-
--(int)savedEnergy
-{
-    return _savedEnergy;
 }
 
 -(void)onEnter
@@ -726,6 +721,7 @@ bool poweradded = NO;
 
 -(void)playBodyBomb
 {
+    self.savedEnergy = 0;
     [self stopAllActions];
     _playerState = kState_Hitting;
     
@@ -737,26 +733,33 @@ bool poweradded = NO;
     [self runAction:repeat];
     [self replaceBodyShape:_body withShapeName:@"bomb"];
     
-    _body->SetLinearDamping(0.5);
-    _body->SetGravityScale(5);
-    _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*70), _body->GetWorldCenter());
-    [self scheduleOnce:@selector(resetBodyPhisic) delay:3];
+//    _body->SetLinearDamping(0.5);
+//    _body->SetGravityScale(5);
+//    _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*70), _body->GetWorldCenter());
+    [self scheduleOnce:@selector(resetBodyPhisic) delay:6];
     [self schedule:@selector(playBodyBombUpdate)];
     [[ControlCenter mapManager] coverAllMegma:YES];
 //    [[ControlCenter germManager] setAllActive:NO];
     _invincible = YES;
 }
 
+int bombPlayCount;
 -(void)playBodyBombUpdate
 {
-    b2Vec2 currentLinearVelocity = _body->GetLinearVelocity();
-    if (currentLinearVelocity.x<0) {
-        _body->SetLinearVelocity(b2Vec2(-currentLinearVelocity.x,currentLinearVelocity.y));
+//    b2Vec2 currentLinearVelocity = _body->GetLinearVelocity();
+//    if (currentLinearVelocity.x<0) {
+//        _body->SetLinearVelocity(b2Vec2(-currentLinearVelocity.x,currentLinearVelocity.y));
+//    }
+    
+//    [[ControlCenter germManager]  bombPlayed];
+    
+//    _body->ApplyForceToCenter(b2Vec2(_body->GetMass()*500,0));
+    if (bombPlayCount>10) {
+        bombPlayCount = 0;
+        [self attactEnemies];
     }
     
-    [[ControlCenter germManager]  bombPlayed];
-    
-    _body->ApplyForceToCenter(b2Vec2(_body->GetMass()*500,0));
+    bombPlayCount ++;
 }
 
 
@@ -764,8 +767,8 @@ bool poweradded = NO;
 -(void)resetBodyPhisic
 {
 //    _body->SetLinearDamping(5);
-    _body->SetLinearDamping(0);
-    _body->SetGravityScale(2);
+//    _body->SetLinearDamping(0);
+//    _body->SetGravityScale(2);
     [self unschedule:@selector(playBodyBombUpdate)];
     _invincible = NO;
 //    [[ControlCenter germManager] setAllActive:YES];
@@ -774,10 +777,10 @@ bool poweradded = NO;
     _playerState = kState_NOthing;
     [self replaceBodyShape:_body withShapeName:@"standby"];
     
-    CGPoint safePosition = [[ControlCenter mapManager] nearestSafePosition];
-    
-    
-    _body->SetTransform(b2Vec2(safePosition.x/PTM_RATIO, safePosition.y/PTM_RATIO), 0);
+//    CGPoint safePosition = [[ControlCenter mapManager] nearestSafePosition];
+//    
+//    
+//    _body->SetTransform(b2Vec2(safePosition.x/PTM_RATIO, safePosition.y/PTM_RATIO), 0);
     _currentAttacType = 0;
     _combo = 0;
     

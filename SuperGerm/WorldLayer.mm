@@ -19,6 +19,7 @@
 #import "ReviveLayer.h"
 #import "ShaderManager.h"
 #import "LevelLayer.h"
+#import "CCCustomCCFollow.h"
 
 @implementation WorldLayer
 {
@@ -49,8 +50,6 @@ static b2World *_world;
         
         
         _player = [[Player alloc] init];
-        _player.position = ccp(100, 30*50);//mapManager.mapSize.height);
-        [_player setPhysicPosition];
         [playerLayer addChild:_player];
         
         mapManager = [MapManager sharedMapManager];
@@ -58,7 +57,7 @@ static b2World *_world;
         [self setAnchorPoint:ccp(0, 0)];
         
 //        [self addChild:[ShaderManager sharedShaderManager]];
-//        [self setScale:2];
+        [self setScale:0.8];
     }
     
     return self;
@@ -113,7 +112,7 @@ static b2World *_world;
 	// It is recommend to disable it
 	//
 	[super draw];
-	
+//	
 //	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
 //	
 //	kmGLPushMatrix();
@@ -142,7 +141,7 @@ bool revivePanleAdded = false;
     _world->Step(delta,10,10);
     [_player update:delta];
 
-    [self moveAndFocusOnPlayer:_player.position];
+//    [self moveAndFocusOnPlayer:_player.position];
     
 //    float range = 2000;
 //    [self setScale:(range - _player.position.y)/range ];
@@ -150,10 +149,12 @@ bool revivePanleAdded = false;
 //    NSLog(@"worldLayer scale %f",self.scale);
 //    [self runAction:[CCFollow actionWithTarget:_player worldBoundary:CGRectMake(mapManager.leftDownEdge.x,mapManager.leftDownEdge.y,(mapManager.rightUpEdge.x-mapManager.leftDownEdge.x)*self.scaleX,(mapManager.rightUpEdge.y-mapManager.leftDownEdge.y))]];
     
+        [self runAction:[CCCustomCCFollow actionWithTarget:_player worldBoundary:CGRectMake(0, 0, mapManager.mapSize.width,mapManager.mapSize.height) worldScale:self.scale]];
+    
     [[GermManager sharedGermManager] update:delta withMapXrange:mapManager.mapXRange];
     [[FenceManager sharedFenceManager] update:delta];
     
-    [mapManager update:delta withWordPotion:self.position];
+//    [mapManager update:delta withWordPotion:self.position];
 //    return;
     if (_player.health<=0) {
 //        PaymentPanel* panel = [[PaymentPanel alloc] init];
@@ -186,7 +187,9 @@ const int WORLD_MOVE_SPEED = 150;
     CGSize winSize = [CCDirector sharedDirector].winSize;
     
     CGPoint actualPosition = position;
-    CGPoint centerOfView = ccpMult(ccp(winSize.width/2-[ControlCenter player].scaleX*winSize.width/5, winSize.height/3),1/self.scale);
+    CGPoint centerOfView = ccpMult(ccp(winSize.width/2, winSize.height/2),1/self.scale);
+    
+//    CGPoint centerOfView = ccpMult(ccp(winSize.width/2-[ControlCenter player].scaleX*winSize.width/5, winSize.height/3),1/self.scale);
     CGPoint viewPoint = ccpMult(ccpSub(centerOfView, actualPosition), self.scale);
     
     if (position.x < mapManager.leftDownEdge.x + centerOfView.x) {
@@ -222,22 +225,22 @@ const int WORLD_MOVE_SPEED = 150;
 //    }
 
 
-        if (([[[CCDirector sharedDirector] actionManager] numberOfRunningActionsInTarget:self] < 1)) {
-            if ([ControlCenter player].scaleX == lastPlayerDirection) {
-                self.position = viewPoint;
-            }
-            else
-            {
-                CCAction* move = [CCMoveTo actionWithDuration:0.4 position:viewPoint];
-                [self runAction:move];
-                lastPlayerDirection = [ControlCenter player].scaleX;
-            }
-        }
-    
+//        if (([[[CCDirector sharedDirector] actionManager] numberOfRunningActionsInTarget:self] < 1)) {
+//            if ([ControlCenter player].scaleX == lastPlayerDirection) {
+//                self.position = viewPoint;
+//            }
+//            else
+//            {
+//                CCAction* move = [CCMoveTo actionWithDuration:0.1 position:viewPoint];
+//                [self runAction:move];
+//                lastPlayerDirection = [ControlCenter player].scaleX;
+//            }
+//        }
+//    
 
 
     
-//    self.position = viewPoint;
+    self.position = viewPoint;
 }
 
 -(void) moveAndFocusOnPlayer:(CGPoint) playerTargetPos

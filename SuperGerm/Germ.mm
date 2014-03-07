@@ -29,9 +29,9 @@
         self.health = 10;
         self.tag = 1;
         _isReadyToAttack = YES;
-        self.ATK = 20;
+        self.ATK = 0.5;
         self.awakeDistance = SCREEN.width/2;
-        _AIModel = WAITING_MODEL;
+        self.AIModel = WAITING_MODEL;
         flyingDirection = 1;
         WAITINGMODELLASTTIME = 1;
         FLYINGMODELLASTTIME = 3;
@@ -363,5 +363,13 @@ static const float scaleFactor = 1;
 -(void)setActive:(BOOL)isActive
 {
     _body->SetActive(isActive);
+}
+
+- (BOOL)isInScreen
+{
+    CGPoint worldPoint = [self.parent convertToWorldSpace:self.position];
+    BOOL xIn = worldPoint.x > 0 && worldPoint.x < SCREEN.width;
+    BOOL yIn = worldPoint.y > 0 && worldPoint.y < SCREEN.height;
+    return xIn && yIn;
 }
 @end

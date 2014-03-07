@@ -26,4 +26,14 @@
 {
     _awake = awake;
 }
+
+- (BOOL)isInScreen
+{
+    CGPoint worldPoint = [self.parent convertToWorldSpace:self.position];
+    BOOL xIn = worldPoint.x > 0 && worldPoint.x < SCREEN.width;
+    BOOL yIn = worldPoint.y > 0 && worldPoint.y < SCREEN.height;
+    return xIn && yIn;
+}
+
+
 @end

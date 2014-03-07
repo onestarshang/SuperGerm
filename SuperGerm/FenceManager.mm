@@ -51,11 +51,11 @@
 
 -(void) update:(ccTime)delta
 {
-    Player* _player = [ControlCenter player];
+//    Player* _player = [ControlCenter player];
     for(int i=0;i<_fences.count;i++)
     {
         Fence *fence = [_fences objectAtIndex:i];
-        if (fabs(fence.position.x - _player.position.x) < SCREEN.width*2/3 && ![fence isAwake])
+        if ([fence isInScreen] && ![fence isAwake])
         {
             [fence setAwake:YES];
             [fence start];

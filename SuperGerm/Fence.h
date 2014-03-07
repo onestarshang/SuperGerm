@@ -14,4 +14,5 @@
 -(void)start;
 -(BOOL)isAwake;
 -(void)setAwake:(BOOL)awake;
+- (BOOL)isInScreen;
 @end

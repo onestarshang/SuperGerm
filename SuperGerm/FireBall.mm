@@ -50,7 +50,7 @@
 
 -(void)beginContactWithPlayer:(GB2Contact *)contact
 {
-    [[ControlCenter player] hurtWithDamage:10 AccodingToActionSprite:self withType:2];
+    [[ControlCenter player] hurtWithDamage:0.5 AccodingToActionSprite:self withType:2];
 }
 
 -(void)update:(ccTime)delta

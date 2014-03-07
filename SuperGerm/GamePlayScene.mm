@@ -205,8 +205,11 @@ static CCLayer *_popLayer;
     [background3 setPosition:ccp(0, -SCREEN.height/3+world.position.y*0.2)];
 
 
-    [hud updateHealthPercent:player.health/player.totalHealth];
+//    [hud updateHealthPercent:player.health/player.totalHealth];
+    [hud updateHealth:player.health];
     [hud updateScore:[world getScore]];
+    
+    [controlLayer updateHitProgress:[player savedEnergy]/1.0];
     
 //    NSLog(@"start time %f",[[NSData data] timeIntervalSinceNow]);
 

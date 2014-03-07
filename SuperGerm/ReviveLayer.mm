@@ -13,11 +13,11 @@
 @implementation ReviveLayer
 -(void)revivePressed:(id)sender
 {
-    [ControlCenter player].health = 100;
+    [ControlCenter player].health = 3;
     
-    CGPoint safePosition = [[ControlCenter mapManager] nearestSafePosition];
+//    CGPoint safePosition = [[ControlCenter mapManager] nearestSafePosition];
     
-    [[ControlCenter player] body]->SetTransform(b2Vec2(safePosition.x/PTM_RATIO, safePosition.y/PTM_RATIO), 0);
+//    [[ControlCenter player] body]->SetTransform(b2Vec2(safePosition.x/PTM_RATIO, safePosition.y/PTM_RATIO), 0);
 
     [[ControlCenter player] playBodyBomb];
     [self removeFromParentAndCleanup:YES];

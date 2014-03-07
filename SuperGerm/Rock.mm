@@ -12,12 +12,14 @@
 {
     BOOL _impuliseAdded;
     CCSprite *dust;
+    float ATK;
 }
 -(instancetype)init
 {
     if (self = [super initWithSpriteFrameName:@"rock.png"])
     {
         _impuliseAdded = NO;
+        ATK = 0.5;
 //        [self addDustBlowEffect];
 
     }
@@ -61,7 +63,7 @@
 //    [[ControlCenter player] meetFireBall];
     NSString *fixtureId = (NSString *)contact.otherFixture->GetUserData();
     if ([fixtureId isEqualToString:@"hurtSensor"]) {
-        [[ControlCenter player] hurtWithDamage:20 AccodingToActionSprite:self withType:3];
+        [[ControlCenter player] hurtWithDamage:ATK AccodingToActionSprite:self withType:3];
         
         b2Fixture * myfixture = contact.ownFixture;
         //get the existing filter

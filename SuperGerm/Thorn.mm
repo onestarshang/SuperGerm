@@ -22,6 +22,7 @@
         self.health = 100;
         _isReadyToAttack = YES;
         self.awakeDistance = SCREEN.width/2;
+        self.ATK = 0.5;
     }
     return self;
 }

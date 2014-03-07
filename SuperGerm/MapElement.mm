@@ -42,15 +42,33 @@
         [self addMegama];
         [self addGerm];
         [self addFence];
+        [self addPlayer];
+        [self addProp];
 //        [self addBoss];
     }
     return self;
+}
+
+- (void)addProp
+{
+    
 }
 
 //- (void)addBoss
 //{
 //    
 //}
+- (void)addPlayer
+{
+    CCTMXObjectGroup* objectGroup = [_tileMap objectGroupNamed:@"Player"];
+    
+    id object = [[objectGroup objects] objectAtIndex:0];
+    int x = [object[@"x"] integerValue];
+    int y = [object[@"y"] integerValue];
+    
+    [ControlCenter player].position = ccp(x, y);
+    [[ControlCenter player] setPhysicPosition];
+}
 
 - (NSArray *)megama
 {

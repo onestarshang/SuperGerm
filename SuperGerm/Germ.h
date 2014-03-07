@@ -43,7 +43,7 @@ enum{
 }
 
 @property (nonatomic) int AIModel;
-@property (nonatomic,assign) int ATK;
+@property (nonatomic,assign) float ATK;
 @property (nonatomic,assign) BOOL isMeetingRightNormalHit;
 @property (nonatomic,assign) BOOL isMeetingLeftNormalHit;
 @property (nonatomic)int awakeDistance;
@@ -81,4 +81,5 @@ enum{
 - (void)setActive:(BOOL)isActiv;
 - (void)turnDirection:(int)direction;
 - (void)setupBody;
+- (BOOL)isInScreen;
 @end

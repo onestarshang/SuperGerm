@@ -21,7 +21,7 @@
 -(void) playBigJumpAnimaiton;
 -(void) turnDirection:(int) direction;
 -(void) setPhysicPosition;
--(void)hurtWithDamage:(int)damage AccodingToActionSprite:(ActionSprite *)actionSprite withType:(int)type;
+-(void)hurtWithDamage:(float)damage AccodingToActionSprite:(ActionSprite *)actionSprite withType:(int)type;
 -(void)dealWithGerm:(Germ*)germ withMapXrange:(MapXRange) mapXRange hitType:(int)hitType;
 -(int)currentAttacType;
 -(void)meetFireBall;
@@ -40,4 +40,5 @@
 @property (nonatomic) CGPoint targetPostion;
 @property (nonatomic,retain) CCSprite* hitEffect;
 @property (nonatomic)int contactFloorCount;
+@property (nonatomic)int savedEnergy;
 @end
