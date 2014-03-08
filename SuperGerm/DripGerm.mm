@@ -25,12 +25,15 @@
         _isReadyToAttack = YES;
         self.awakeDistance = SCREEN.width/2;
         self.ATK = 0.5;
-        self.AIModel = WAITING_MODEL;
+        self.AIModel = FLYING_MODEL;
         WAITINGMODELLASTTIME = 1;
         FLYINGMODELLASTTIME = 3;
         READYATTACKLASTTIME = 5;
         PRODUCELASTTIME = 5;
         produceCount = 0;
+        
+        self.dire = 1;
+
 //        self.anchorPoint = ccp(0.5,0.5);
         
     }
@@ -57,6 +60,10 @@
         oringinalPositon = self.position;
         [self replaceBodyShape:_body withShapeName:@"dripgerm"];
         [self setAwake:NO];
+    }
+    
+    if (self.position.x > [ControlCenter player].position.x) {
+        self.dire = -1;
     }
 }
 
@@ -180,9 +187,6 @@
         drip.AIModel = FLYING_MODEL;
         [[GermManager sharedGermManager] addGerm:drip position:ccp(self.position.x,self.position.y-30)];
         [drip playDripDorpAnimaion];
-        srand((unsigned)time(0));  //不加这句每次产生的随机数不变
-        int i = rand() % 2;
-        drip.dire = i>0?1:-1;
         NSLog(@"drip germ direction %d",self.dire);
     }
     else if (self.AIModel == FLYING_MODEL && timeGap > FLYINGMODELLASTTIME)
@@ -205,14 +209,29 @@
         b2Vec2 speed = _body->GetLinearVelocity();
         if (speed.y > -0.5)
         {
-            _body->ApplyForceToCenter(b2Vec2(_body->GetMass()*4*self.dire,0));
+//            _body->ApplyForceToCenter(b2Vec2(_body->GetMass()*4*self.dire,0));
+            _body->SetLinearVelocity(b2Vec2(2*self.dire,speed.y));
         }
     }
     else if (self.AIModel == READY_ATTACK_MODEL)
     {
         [self playPreHitAnimation];
+        _body->SetLinearVelocity(b2Vec2(0,0));
+
     }
 }
+
+-(void)beginContactWithMapElement:(GB2Contact *)contact
+{
+    NSString *fixtureId = (NSString *)contact.otherFixture->GetUserData();
+    NSString *myFixtureId = (NSString*)contact.ownFixture->GetUserData();
+    
+    if (([fixtureId  isEqualToString: @"floor"] || [fixtureId  isEqualToString: @"wall"]) && [myFixtureId isEqualToString:@"drectionSensor"])
+    {
+        self.dire = -self.dire;
+    }
+}
+
 
 -(void)beginContactWithPlayer:(GB2Contact *)contact
 {

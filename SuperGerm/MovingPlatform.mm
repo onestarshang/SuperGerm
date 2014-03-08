@@ -78,6 +78,17 @@
 }
 
 
+- (void)presolveContactWithPlayer:(GB2Contact *)contact
+{
+    b2Vec2 speed =contact.otherFixture->GetBody()->GetLinearVelocity();
+    
+    if (speed.y > 0) {
+        [contact setEnabled:NO];
+    }
+    
+    
+}
+
 -(void)stop
 {
     [self unscheduleUpdate];

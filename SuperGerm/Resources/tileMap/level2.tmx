@@ -104,12 +104,11 @@
  </objectgroup>
  <objectgroup name="LandGerm" width="60" height="32"/>
  <objectgroup name="DripGerm" width="60" height="32">
-  <object gid="22" x="1648" y="497"/>
-  <object gid="22" x="5500" y="2600"/>
   <object gid="22" x="4400" y="1600"/>
   <object gid="22" x="5200" y="1800"/>
-  <object gid="22" x="2400" y="200"/>
-  <object gid="22" x="4500" y="500"/>
+  <object gid="22" x="500" y="1000"/>
+  <object gid="22" x="4100" y="1100"/>
+  <object gid="22" x="4400" y="2900"/>
  </objectgroup>
  <objectgroup name="Thorn" width="60" height="32">
   <object gid="4" x="3303" y="2120"/>
@@ -121,5 +120,36 @@
  </objectgroup>
  <objectgroup name="Player" width="60" height="32">
   <object gid="17" x="300" y="900"/>
+ </objectgroup>
+ <objectgroup name="GoldCoin" width="60" height="32">
+  <object gid="8" x="800" y="2900"/>
+  <object gid="8" x="900" y="2900"/>
+  <object gid="8" x="1000" y="2900"/>
+  <object gid="8" x="2500" y="2300"/>
+  <object gid="8" x="4100" y="2800"/>
+  <object gid="8" x="4200" y="2800"/>
+  <object gid="8" x="4300" y="2800"/>
+  <object gid="8" x="4400" y="2800"/>
+  <object gid="8" x="4500" y="2800"/>
+  <object gid="8" x="4600" y="2800"/>
+  <object gid="8" x="5800" y="1500"/>
+  <object gid="8" x="5700" y="1500"/>
+  <object gid="8" x="4300" y="1100"/>
+  <object gid="8" x="4500" y="1100"/>
+  <object gid="8" x="2700" y="700"/>
+  <object gid="8" x="1700" y="400"/>
+  <object gid="8" x="1200" y="300"/>
+  <object gid="8" x="200" y="400"/>
+  <object gid="8" x="700" y="300"/>
+  <object gid="8" x="800" y="1000"/>
+  <object gid="8" x="700" y="1000"/>
+  <object gid="8" x="200" y="1000"/>
+  <object gid="8" x="2400" y="1200"/>
+  <object gid="8" x="3300" y="600"/>
+  <object gid="8" x="3000" y="2300"/>
+  <object gid="8" x="3400" y="2100"/>
+  <object gid="8" x="3200" y="2100"/>
+  <object gid="8" x="4300" y="2000"/>
+  <object gid="8" x="4400" y="2000"/>
  </objectgroup>
 </map>

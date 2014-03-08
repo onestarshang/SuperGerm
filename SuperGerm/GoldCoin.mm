@@ -8,12 +8,14 @@
 
 #import "GoldCoin.h"
 #import "WorldLayer.h"
+#import "PropManager.h"
+#import "SimpleAudioEngine.h"
 
 @implementation GoldCoin
 
 - (instancetype)init
 {
-    self = [super initWithSpriteFrameName:@"goldCoin"];
+    self = [super initWithSpriteFrameName:@"goldcoin.png"];
     if (self) {
     }
     
@@ -29,6 +31,26 @@
     _body = [WorldLayer world]->CreateBody(&ballBodyDef);
     [self replaceBodyShape:_body withShapeName:@"germ"];
 }
+
+- (void)removeSelf
+{
+    [self removeFromParentAndCleanup:YES];
+    [WorldLayer world]->DestroyBody(_body);
+    [[PropManager sharedPropManager] addCoin];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"coin.mp3"];
+
+}
+
+-(void)beginContactWithPlayer:(GB2Contact *)contact
+{
+    NSString *fixtureId = (NSString *)contact.otherFixture->GetUserData();
+    
+    if ([fixtureId isEqualToString:@"hurtSensor"]) {
+        [self scheduleOnce:@selector(removeSelf) delay:0.1];
+    }
+    
+}
+
 
 
 @end

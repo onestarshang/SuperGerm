@@ -32,6 +32,7 @@
 - (void) moveAndFocusOnPlayer:(CGPoint) offset;
 - (void) update:(ccTime)delta;
 - (int)getScore;
+- (int)getCoinCount;
 - (void)resetRevivePanleAdded;
 - (void)initializeWithLevel:(int)level;
 - (void)scaleSmoothlyTo:(float)scale time:(float)time;

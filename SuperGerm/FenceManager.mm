@@ -39,7 +39,8 @@
                 
                 Fence* fence = (Fence*)obj;
                 [[[ControlCenter mapManager] actionSpriteLayer] addChild:fence];
-                [fence setPosition:ccp((x + tileMap.tileSize.width/2)/2, y/2)];
+                [fence setPosition:ccp((x + tileMap.tileSize.width/2)/2, (y+tileMap.tileSize.height/2)/2)];
+                
                 [fence setupBody];
                 //            [fence start];
                 

@@ -208,6 +208,7 @@ static CCLayer *_popLayer;
 //    [hud updateHealthPercent:player.health/player.totalHealth];
     [hud updateHealth:player.health];
     [hud updateScore:[world getScore]];
+    [hud updateCoinCount:[world getCoinCount]];
     
     [controlLayer updateHitProgress:[player savedEnergy]/1.0];
     

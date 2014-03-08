@@ -30,8 +30,8 @@
 - (BOOL)isInScreen
 {
     CGPoint worldPoint = [self.parent convertToWorldSpace:self.position];
-    BOOL xIn = worldPoint.x > 0 && worldPoint.x < SCREEN.width;
-    BOOL yIn = worldPoint.y > 0 && worldPoint.y < SCREEN.height;
+    BOOL xIn = worldPoint.x > -100 && worldPoint.x < SCREEN.width+100;
+    BOOL yIn = worldPoint.y > -100 && worldPoint.y < SCREEN.height+100;
     return xIn && yIn;
 }
 

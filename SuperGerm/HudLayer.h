@@ -12,4 +12,5 @@
 - (void)updateHealthPercent:(float)percent;
 - (void)updateScore:(int)score;
 - (void)updateHealth:(float)health;
+- (void)updateCoinCount:(int)coin;
 @end

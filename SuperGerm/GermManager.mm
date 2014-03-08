@@ -90,7 +90,8 @@ const int germCount = 12;
                 
                 Germ *germ = (Germ*)obj;
                 [_parent addChild:germ];
-                germ.position = ccp(x/2,y/2);
+//                germ.position = ccp(x/2,y/2);
+                [germ setPosition:ccp((x + tileMap.tileSize.width/2)/2, (y + tileMap.tileSize.height/2)/2)];
                 [germ setupBody];
 //                [germ playEnterAnimation];
                 [_germs addObject:germ];

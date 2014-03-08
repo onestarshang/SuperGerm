@@ -20,6 +20,7 @@
     CCProgressTimer *energyProgress;
     CCLabelBMFont* scoreLabel;
     HealthHeart *heartUI;
+    CCLabelBMFont* coinLabel;
 }
 
 -(instancetype)init
@@ -48,6 +49,10 @@
         [self addChild:scoreLabel];
         [scoreLabel setPosition:ccp(SCREEN.width-[scoreLabel contentSize].width,SCREEN.height-[scoreLabel contentSize].height/2)];
         
+        coinLabel = [CCLabelBMFont labelWithString:@"" fntFile:@"hittext.fnt"];
+        [coinLabel setString:@"COIN:"];
+        [self addChild:coinLabel];
+        [coinLabel setPosition:ccp(SCREEN.width/2,SCREEN.height-[scoreLabel contentSize].height/2)];
     }
     
     return self;
@@ -66,5 +71,10 @@
 -(void)updateScore:(int)score
 {
     [scoreLabel setString:[NSString stringWithFormat:@"SCORE:%d",score]];
+}
+
+- (void)updateCoinCount:(int)coin
+{
+    [coinLabel setString:[NSString stringWithFormat:@"COIN:%d",coin]];
 }
 @end

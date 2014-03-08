@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="120" height="20" tilewidth="100" tileheight="100">
+ <tileset firstgid="1" name="tileMap" tilewidth="100" tileheight="100">
+  <image source="tileMap_3.png" width="512" height="512"/>
+  <tile id="1">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="map1" width="120" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzt1k0KgCAQBlChDtCq+x+1bUSaiJFO78EHgpvxbzAlAAAAAP5oLQSIz9t/V6nHtu67c4J4evbgNTPuZda/40y15lxrH3ktS+NczXxEd3dz5PvqfOvles9TT9qCJfLaJKX9lK9rGSEHRcoP4Q==
+  </data>
+ </layer>
+ <objectgroup name="Player" width="120" height="20">
+  <object gid="7" x="600" y="1600"/>
+ </objectgroup>
+ <objectgroup name="Germ" width="120" height="20">
+  <object gid="12" x="5000" y="1500"/>
+ </objectgroup>
+ <objectgroup name="GoldCoin" width="120" height="20">
+  <object gid="1" x="1500" y="1500"/>
+  <object gid="1" x="1800" y="1500"/>
+  <object gid="1" x="6500" y="1200"/>
+  <object gid="1" x="6600" y="1200"/>
+  <object gid="1" x="6700" y="1200"/>
+  <object gid="1" x="6800" y="1200"/>
+  <object gid="1" x="6900" y="1200"/>
+  <object gid="1" x="8000" y="900"/>
+  <object gid="1" x="8100" y="900"/>
+  <object gid="1" x="8200" y="900"/>
+ </objectgroup>
+ <objectgroup name="Thorn" width="120" height="20">
+  <object gid="5" x="2400" y="1800"/>
+ </objectgroup>
+ <objectgroup name="Megama" width="120" height="20">
+  <object gid="13" x="5200" y="1900"/>
+  <object gid="13" x="5300" y="1900"/>
+  <object gid="13" x="5400" y="1900"/>
+ </objectgroup>
+</map>

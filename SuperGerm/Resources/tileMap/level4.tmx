@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="32" tilewidth="100" tileheight="100">
+ <tileset firstgid="1" name="tileMap2" tilewidth="100" tileheight="100">
+  <image source="tileMap_2.png" width="512" height="512"/>
+  <tile id="1">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="floor" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="map1" width="60" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwzENAAAMA6Be9S+5PjZISAAAAAAAAABu6rMDyZABaQ==
+  </data>
+ </layer>
+ <objectgroup name="Player" width="60" height="32">
+  <object gid="5" x="300" y="3000"/>
+ </objectgroup>
+ <objectgroup name="Germ" width="60" height="32">
+  <object gid="7" x="1200" y="2500"/>
+ </objectgroup>
+ <objectgroup name="GoldCoin" width="60" height="32">
+  <object gid="9" x="0" y="3200"/>
+  <object gid="9" x="600" y="3100"/>
+  <object gid="9" x="700" y="3100"/>
+  <object gid="9" x="800" y="3100"/>
+  <object gid="9" x="900" y="3000"/>
+ </objectgroup>
+</map>

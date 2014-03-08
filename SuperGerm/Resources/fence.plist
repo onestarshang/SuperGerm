@@ -46,11 +46,11 @@
             <key>fireballAnimaiton/3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{128,177},{70,120}}</string>
+                <string>{{126,286},{70,120}}</string>
                 <key>offset</key>
                 <string>{-4,3}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{2,1},{70,120}}</string>
                 <key>sourceSize</key>
@@ -59,11 +59,11 @@
             <key>fireballAnimaiton/4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{400,156},{78,122}}</string>
+                <string>{{128,206},{78,122}}</string>
                 <key>offset</key>
                 <string>{2,2}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{4,1},{78,122}}</string>
                 <key>sourceSize</key>
@@ -72,15 +72,15 @@
             <key>goldcoin.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{204,2},{194,185}}</string>
+                <string>{{137,104},{100,100}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{194,185}}</string>
+                <string>{{0,0},{100,100}}</string>
                 <key>sourceSize</key>
-                <string>{194,185}</string>
+                <string>{100,100}</string>
             </dict>
             <key>movingplatform.png</key>
             <dict>
@@ -111,7 +111,7 @@
             <key>thorn/1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{400,42},{100,26}}</string>
+                <string>{{2,327},{100,26}}</string>
                 <key>offset</key>
                 <string>{0,-36}</string>
                 <key>rotated</key>
@@ -124,11 +124,11 @@
             <key>thorn/2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{400,2},{100,38}}</string>
+                <string>{{204,2},{100,38}}</string>
                 <key>offset</key>
                 <string>{0,-30}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
                 <string>{{0,61},{100,38}}</string>
                 <key>sourceSize</key>
@@ -137,7 +137,7 @@
             <key>thorn/3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{400,70},{98,84}}</string>
+                <string>{{2,355},{98,84}}</string>
                 <key>offset</key>
                 <string>{-1,-7}</string>
                 <key>rotated</key>
@@ -155,9 +155,9 @@
             <key>realTextureFileName</key>
             <string>fence.png</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:585a5627c470c9af9089770b2562a92d:11878db4d53abef9f398bcec0bef5e07:c1d6568ff2d31424db2e7481177d11b5$</string>
+            <string>$TexturePacker:SmartUpdate:7e0db8c89dba13ee20c166e0c9efea6a:8ab0cc86f000203c4bb156efb694b755:c1d6568ff2d31424db2e7481177d11b5$</string>
             <key>textureFileName</key>
             <string>fence.png</string>
         </dict>

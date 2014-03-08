@@ -15,6 +15,7 @@
 #import "ControlCenter.h"
 #import "Rock.h"
 #import "FenceManager.h"
+#import "PropManager.h"
 
 @implementation MapElement
 {
@@ -51,13 +52,9 @@
 
 - (void)addProp
 {
-    
+    [[PropManager sharedPropManager] addPropInTileMap:_tileMap];
 }
 
-//- (void)addBoss
-//{
-//    
-//}
 - (void)addPlayer
 {
     CCTMXObjectGroup* objectGroup = [_tileMap objectGroupNamed:@"Player"];

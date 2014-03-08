@@ -20,6 +20,7 @@
 #import "ShaderManager.h"
 #import "LevelLayer.h"
 #import "CCCustomCCFollow.h"
+#import "PropManager.h"
 
 @implementation WorldLayer
 {
@@ -57,7 +58,7 @@ static b2World *_world;
         [self setAnchorPoint:ccp(0, 0)];
         
 //        [self addChild:[ShaderManager sharedShaderManager]];
-        [self setScale:0.8];
+//        [self setScale:0.8];
     }
     
     return self;
@@ -141,7 +142,7 @@ bool revivePanleAdded = false;
     _world->Step(delta,10,10);
     [_player update:delta];
 
-//    [self moveAndFocusOnPlayer:_player.position];
+    [self moveAndFocusOnPlayer:_player.position];
     
 //    float range = 2000;
 //    [self setScale:(range - _player.position.y)/range ];
@@ -149,7 +150,7 @@ bool revivePanleAdded = false;
 //    NSLog(@"worldLayer scale %f",self.scale);
 //    [self runAction:[CCFollow actionWithTarget:_player worldBoundary:CGRectMake(mapManager.leftDownEdge.x,mapManager.leftDownEdge.y,(mapManager.rightUpEdge.x-mapManager.leftDownEdge.x)*self.scaleX,(mapManager.rightUpEdge.y-mapManager.leftDownEdge.y))]];
     
-        [self runAction:[CCCustomCCFollow actionWithTarget:_player worldBoundary:CGRectMake(0, 0, mapManager.mapSize.width,mapManager.mapSize.height) worldScale:self.scale]];
+//        [self runAction:[CCCustomCCFollow actionWithTarget:_player worldBoundary:CGRectMake(0, 0, mapManager.mapSize.width,mapManager.mapSize.height) worldScale:self.scale]];
     
     [[GermManager sharedGermManager] update:delta withMapXrange:mapManager.mapXRange];
     [[FenceManager sharedFenceManager] update:delta];
@@ -268,6 +269,11 @@ const int WORLD_MOVE_SPEED = 150;
 -(int)getScore
 {
     return [mapManager getScore];
+}
+
+- (int)getCoinCount
+{
+    return [[PropManager sharedPropManager] getCoinCount];
 }
 
 -(int)getKillNum

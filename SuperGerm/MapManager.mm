@@ -28,6 +28,7 @@ int mapSection[5] = {1800,2800,3300,4000,4500 };
     Player* _player;
     CCNode* _maplayer;
     CCNode* _actionSpriteLayer;
+
     int stage;
     int currentMapHeight;
     int maxMapHeight;
@@ -66,7 +67,7 @@ int mapSection[5] = {1800,2800,3300,4000,4500 };
     
     _leftDownEdge = ccp(0, 0);
     _rightUpEdge = ccp(currentSection, [self mapSize].height);
-        [self updateWall];
+    [self updateWall];
 }
 
 -(void)onEnter
@@ -147,40 +148,40 @@ int mapSection[5] = {1800,2800,3300,4000,4500 };
 int gapCount = 0;
 -(void)update:(ccTime)delta withWordPotion:(CGPoint)worldPostion
 {
-    if ([[GermManager sharedGermManager] isCurrentSessionClear:_rightUpEdge.x]) {
-        
-        if (currentSection + 20*tileSize <= 80*tileSize) {
-            currentSection+=20*tileSize;
-            stage++;
-            if (-worldPostion.x > _leftDownEdge.x) {
-                _leftDownEdge.x = (int)(-worldPostion.x/tileSize)*tileSize;
-            }
-            _rightUpEdge = ccp(currentSection, [self mapSize].height);
-            
-            [self addStageLabel];
-            
-            NSMutableArray* deletElements = [[[NSMutableArray alloc] init] autorelease];
-            for (MapElement* element in elementArray) {
-                if (element.position.x + element.size.width< _leftDownEdge.x) {
-                    [deletElements addObject:element];
-                }
-            }
-            
-            for (MapElement* element in deletElements) {
-                [element cleanSelf];
-            }
-        }
-        
-
-    }
-//    _player.position.x > [self mapSize].width - SCREEN.width && 
+//    if ([[GermManager sharedGermManager] isCurrentSessionClear:_rightUpEdge.x]) {
+//        
+//        if (currentSection + 20*tileSize <= 80*tileSize) {
+//            currentSection+=20*tileSize;
+//            stage++;
+//            if (-worldPostion.x > _leftDownEdge.x) {
+//                _leftDownEdge.x = (int)(-worldPostion.x/tileSize)*tileSize;
+//            }
+//            _rightUpEdge = ccp(currentSection, [self mapSize].height);
+//            
+//            [self addStageLabel];
+//            
+//            NSMutableArray* deletElements = [[[NSMutableArray alloc] init] autorelease];
+//            for (MapElement* element in elementArray) {
+//                if (element.position.x + element.size.width< _leftDownEdge.x) {
+//                    [deletElements addObject:element];
+//                }
+//            }
+//            
+//            for (MapElement* element in deletElements) {
+//                [element cleanSelf];
+//            }
+//        }
+//        
+//
+//    }
+//    _player.position.x > [self mapSize].width - SCREEN.width &&
     
-    if ([self mapSize].width < _rightUpEdge.x) {
-        
-        [self addElement];
-    }
+//    if ([self mapSize].width < _rightUpEdge.x) {
+//        
+//        [self addElement];
+//    }
     
-    [self updateWall];
+//    [self updateWall];
 }
 
 -(void) addStageLabel
