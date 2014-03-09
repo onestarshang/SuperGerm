@@ -36,6 +36,27 @@ const int SPEED = 6;
     int hit3count;
     int hit4count;
     int hurt3count;
+    
+    /**
+     * This is the rate at which the hero speeds up when you move him left and right.
+     */
+    float acceleration;//:Number = 1;
+    
+    /**
+     * This is the fastest speed that the hero can move left or right.
+     */
+    float maxVelocity;//:Number = 8;
+    
+    /**
+     * This is the initial velocity that the hero will move at when he jumps.
+     */
+    float jumpHeight;//:Number = 11;
+    
+    /**
+     * This is the amount of "float" that the hero has when the player holds the jump button while jumping.
+     */
+    float jumpAcceleration;//:Number = 0.3;
+
 }
 
 -(id) init
@@ -71,6 +92,11 @@ const int SPEED = 6;
         self.hitEffect = [CCSprite spriteWithSpriteFrameName:@"hitEffect/01_01.png"];
         
         [self replaceBodyShape:_body withShapeName:@"standby"];
+        
+        acceleration = 1;
+        maxVelocity = 6;
+        jumpHeight = 13;
+        jumpAcceleration = 0.3;
         
         
     }
@@ -468,13 +494,15 @@ const int SPEED = 6;
     if (self.isTouchingA) {
          [self playHitAnimation];
         self.isTouchingA = NO;
-        _body->SetLinearVelocity(b2Vec2(0,speed.y));
+//        _body->SetLinearVelocity(b2Vec2(0,speed.y));
+        speed.x = 0;
     }
     else if (self.isTouchingR)
     {
 //        _playerState != kState_Hitting &&
         if ( _playerState != kState_BeingHurt) {
-            _body->ApplyLinearImpulse(b2Vec2((SPEED*_body->GetMass() - speed.x*_body->GetMass()),0),_body->GetWorldCenter());
+            speed.x += acceleration;
+//            _body->ApplyLinearImpulse(b2Vec2((SPEED*_body->GetMass() - speed.x*_body->GetMass()),0),_body->GetWorldCenter());
             [self playRunAnimation];
         }
         self.isTouchingR = NO;
@@ -483,7 +511,8 @@ const int SPEED = 6;
     else if (self.isTouchingL)
     {
         if (_playerState != kState_BeingHurt) {
-                _body->ApplyLinearImpulse(b2Vec2((-SPEED*_body->GetMass() - speed.x*_body->GetMass()),0),_body->GetWorldCenter());
+            speed.x -= acceleration;
+//                _body->ApplyLinearImpulse(b2Vec2((-SPEED*_body->GetMass() - speed.x*_body->GetMass()),0),_body->GetWorldCenter());
                 [self playRunAnimation];
             }
         self.isTouchingL = NO;
@@ -491,10 +520,35 @@ const int SPEED = 6;
     }
     else
     {
-        _body->SetLinearVelocity(b2Vec2(0,speed.y));
+        speed.x = 0;
         [self playStandbyAnimation];
     }
     
+    BOOL _onGround = self.contactFloorCount > 0;
+    
+    if (_onGround && self.isTouchingB)
+    {
+        speed.y = jumpHeight;
+        [self playBigJumpAnimaiton];
+        //_onGround = false; // also removed in the handleEndContact. Useful here if permanent contact e.g. box on hero.
+    }
+    
+    if (self.isTouchingB && !_onGround && speed.y > 0)
+    {
+        [self playSmallJumpAnimaiton];
+        speed.y += jumpAcceleration;
+    }
+    
+    if (speed.x > maxVelocity) {
+        speed.x = maxVelocity;
+    }
+    else if(speed.x < -maxVelocity)
+    {
+        speed.x = -maxVelocity;
+    }
+    
+    
+    _body->SetLinearVelocity(speed);
     [self sythShapePosition];
 }
 
@@ -660,21 +714,28 @@ bool poweradded = NO;
     }
     else
     {
-//        b2Vec2 gravity = [WorldLayer world]->GetGravity();
-        if (self.contactFloorCount > 0 && power<0.15) {
-            poweradded = NO;
-            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*3), _body->GetWorldCenter());
-            //            NSLog(@"======");
-            [self playSmallJumpAnimaiton];
-//            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
+////        b2Vec2 gravity = [WorldLayer world]->GetGravity();
+//        if (self.contactFloorCount > 0 && power<0.15) {
+//            poweradded = NO;
+//            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*3), _body->GetWorldCenter());
+//            //            NSLog(@"======");
+//            [self playSmallJumpAnimaiton];
+////            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
+//        }
+//        else if (power>=0.15 && !poweradded)
+//        {
+//            poweradded = YES;
+//            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*7), _body->GetWorldCenter());
+//            //            NSLog(@"++++");
+//            [self playBigJumpAnimaiton];
+////            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
+//        }
+        if (power) {
+            self.isTouchingB = YES;
         }
-        else if (power>=0.15 && !poweradded)
+        else
         {
-            poweradded = YES;
-            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*7), _body->GetWorldCenter());
-            //            NSLog(@"++++");
-            [self playBigJumpAnimaiton];
-//            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
+            self.isTouchingB = NO;
         }
         
     }

@@ -177,6 +177,7 @@ float hitButtonHoldingTime;
     else
     {
         jumpButtonHoldingTime = 0;
+        [_delegate buttonCallBack:0 power:jumpButtonHoldingTime];
     }
     
     if ([hitButton active]) {
