@@ -12,6 +12,5 @@
 -(instancetype) initWithMapName:(NSString*)mapName withPositon:(CGPoint)position withHeight:(int)currentHeight;
 -(CGSize)size;
 -(void)cleanSelf;
--(void)coverMegma:(BOOL)isCover;
 @property (nonatomic,retain)CCTMXTiledMap* tileMap;
 @end

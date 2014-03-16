@@ -25,28 +25,12 @@
     return self;
 }
 
--(void)addPropInTileMap:(CCTMXTiledMap *)tileMap
+- (void)addProp:(id)obj atPositon:(CGPoint)position
 {
-    for (CCTMXObjectGroup* objectGroup in [tileMap objectGroups])
-    {
-        for( id object in [objectGroup objects] )
-        {
-            
-            NSString* groupName = [objectGroup groupName];
-            Class propClass = NSClassFromString(groupName);
-            NSObject* obj = [[[propClass alloc] init] autorelease];
-            if (propClass && [obj isKindOfClass:[Prop class]])
-            {
-                int x = [object[@"x"] integerValue];
-                int y = [object[@"y"] integerValue];
-                
-                Prop* prop = (Prop*)obj;
-                [[[ControlCenter mapManager] actionSpriteLayer] addChild:prop];
-                [prop setPosition:ccp((x + tileMap.tileSize.width/2)/2, (y + tileMap.tileSize.height/2)/2)];
-                [prop setupBody];
-            }
-		}
-    }
+    Prop* prop = (Prop*)obj;
+    [[[ControlCenter mapManager] actionSpriteLayer] addChild:prop];
+    [prop setPosition:position];
+    [prop setupBody];
 }
 
 - (void)addCoin

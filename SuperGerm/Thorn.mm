@@ -16,7 +16,6 @@
 {
     if (self = [super initWithSpriteFrameName:@"thorn/1.png"])
     {
-        [self setAnchorPoint:ccp(0, 0)];
         ATTACKLASTTIME = 0.6;
         WAITINGMODELLASTTIME = 2;
         self.health = 100;

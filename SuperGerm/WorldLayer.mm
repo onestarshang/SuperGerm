@@ -58,7 +58,7 @@ static b2World *_world;
         [self setAnchorPoint:ccp(0, 0)];
         
 //        [self addChild:[ShaderManager sharedShaderManager]];
-//        [self setScale:0.8];
+        [self setScale:0.8];
     }
     
     return self;
@@ -67,6 +67,7 @@ static b2World *_world;
 - (void)initializeWithLevel:(int)level
 {
     [mapManager initWithMapLayer:mapLayer actionSpriteLayer:actionSpriteLayer level:level player:_player];
+    [self moveAndFocusOnPlayer:_player.position];
     [self scheduleUpdate];
 }
 
@@ -113,14 +114,14 @@ static b2World *_world;
 	// It is recommend to disable it
 	//
 	[super draw];
-//	
-//	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
-//	
-//	kmGLPushMatrix();
-//	
-//	_world->DrawDebugData();
-//	
-//	kmGLPopMatrix();
+
+    BOOL debugDraw = NO;
+    if (debugDraw) {
+        ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
+        kmGLPushMatrix();
+        _world->DrawDebugData();
+        kmGLPopMatrix();
+    }
 }
 
 - (void)scaleSmoothlyTo:(float)scale time:(float)time
@@ -142,7 +143,7 @@ bool revivePanleAdded = false;
     _world->Step(delta,10,10);
     [_player update:delta];
 
-    [self moveAndFocusOnPlayer:_player.position];
+//    [self moveAndFocusOnPlayer:_player.position]; 
     
 //    float range = 2000;
 //    [self setScale:(range - _player.position.y)/range ];
@@ -150,38 +151,24 @@ bool revivePanleAdded = false;
 //    NSLog(@"worldLayer scale %f",self.scale);
 //    [self runAction:[CCFollow actionWithTarget:_player worldBoundary:CGRectMake(mapManager.leftDownEdge.x,mapManager.leftDownEdge.y,(mapManager.rightUpEdge.x-mapManager.leftDownEdge.x)*self.scaleX,(mapManager.rightUpEdge.y-mapManager.leftDownEdge.y))]];
     
-//        [self runAction:[CCCustomCCFollow actionWithTarget:_player worldBoundary:CGRectMake(0, 0, mapManager.mapSize.width,mapManager.mapSize.height) worldScale:self.scale]];
+    [self stopAllActions];
+    [self runAction:[CCCustomCCFollow actionWithTarget:_player worldBoundary:CGRectMake(0, 0, mapManager.mapSize.width,mapManager.mapSize.height) worldScale:self.scale]];
     
     [[GermManager sharedGermManager] update:delta withMapXrange:mapManager.mapXRange];
     [[FenceManager sharedFenceManager] update:delta];
-    
-//    [mapManager update:delta withWordPotion:self.position];
-//    return;
-    if (_player.health<=0) {
-//        PaymentPanel* panel = [[PaymentPanel alloc] init];
-//        [self addChild:panel];
-//        [panel showAlerView];
-//        [_player removeFromParentAndCleanup:YES];
-        
-        
+
+    if (_player.health<=0)
+    {
         if (!revivePanleAdded) {
             ReviveLayer *reviveLayer = (ReviveLayer *)[CCBReader nodeGraphFromFile:@"reviveLayer.ccbi"];
             [[[CCDirector sharedDirector] runningScene] addChild:reviveLayer];
             revivePanleAdded = YES;
             return;
         }
-        
-    }
-    else
-    {
-        if (_player.position.x > [mapManager mapSize].width - SCREEN.width/3) {
-            
-
-        }
     }
 }
 
-const int WORLD_MOVE_SPEED = 150;
+//const int WORLD_MOVE_SPEED = 150;
 
 - (void)setViewPointCenter:(CGPoint) position
 {
@@ -208,38 +195,6 @@ const int WORLD_MOVE_SPEED = 150;
     if (position.y/self.scale > mapManager.rightUpEdge.y - winSize.height + centerOfView.y) {
         viewPoint.y = -mapManager.rightUpEdge.y*self.scale + winSize.height;
     }
-    
-//    viewPoint = CGPointMake(viewPoint.x/0.8, viewPoint.y/0.8);
-    // &&
-//    if (fabs(viewPoint.x - self.position.x) > SCREEN.width*300)
-//    {
-////        [self stopAllActions];
-//        if (([[[CCDirector sharedDirector] actionManager] numberOfRunningActionsInTarget:self] < 1)) {
-//            CCAction* move = [CCMoveTo actionWithDuration:fabs(viewPoint.x - self.position.x)/WORLD_MOVE_SPEED position:viewPoint];
-//            [self runAction:move];
-//        }
-//
-//    }
-//    else if([[[CCDirector sharedDirector] actionManager] numberOfRunningActionsInTarget:self] < 1)
-//    {
-//        self.position = viewPoint;
-//    }
-
-
-//        if (([[[CCDirector sharedDirector] actionManager] numberOfRunningActionsInTarget:self] < 1)) {
-//            if ([ControlCenter player].scaleX == lastPlayerDirection) {
-//                self.position = viewPoint;
-//            }
-//            else
-//            {
-//                CCAction* move = [CCMoveTo actionWithDuration:0.1 position:viewPoint];
-//                [self runAction:move];
-//                lastPlayerDirection = [ControlCenter player].scaleX;
-//            }
-//        }
-//    
-
-
     
     self.position = viewPoint;
 }

@@ -40,24 +40,34 @@
  </tileset>
  <layer name="map1" width="120" height="20">
   <data encoding="base64" compression="zlib">
-   eJzt0bENAEAIA7GI9vffly3gkWzpylRJAAAAAAAAACCpoQ07/Pu3J+lsDcLtClk=
+   eJzt0bEJACAMRcGPrb37j+oGwcoo3MHrEggkAQAAAAAAAIBkXNqhh/++bR50Oqc/W0Xdt6luAx04Cps=
   </data>
  </layer>
  <objectgroup name="Player" width="120" height="20">
   <object gid="7" x="600" y="1600"/>
  </objectgroup>
  <objectgroup name="GoldCoin" width="120" height="20"/>
- <objectgroup name="Megama" width="120" height="20"/>
  <objectgroup name="Thorn" width="120" height="20"/>
- <objectgroup name="Germ" width="120" height="20"/>
+ <objectgroup name="Germ" width="120" height="20">
+  <object gid="12" x="6300" y="900"/>
+  <object x="5900" y="1500"/>
+ </objectgroup>
  <objectgroup name="Rock" width="120" height="20"/>
  <objectgroup name="BulletGerm" width="120" height="20"/>
- <objectgroup name="MovingPlatform" width="120" height="20"/>
+ <objectgroup name="MovingPlatform" width="120" height="20">
+  <object gid="6" x="1200" y="1600">
+   <properties>
+    <property name="offsetX" value="0"/>
+    <property name="offsetY" value="200"/>
+   </properties>
+  </object>
+  <object gid="6" x="5900" y="1400"/>
+ </objectgroup>
  <objectgroup name="DripGerm" width="120" height="20"/>
  <objectgroup name="LandGerm" width="120" height="20"/>
- <objectgroup name="Boss" width="120" height="20"/>
- <objectgroup name="FireBall" width="120" height="20"/>
- <objectgroup name="DripGerm" width="120" height="20">
-  <object gid="9" x="2100" y="1800"/>
+ <objectgroup name="Boss" width="120" height="20">
+  <object gid="8" x="2300" y="1800"/>
  </objectgroup>
+ <objectgroup name="FireBall" width="120" height="20"/>
+ <objectgroup name="DripGerm" width="120" height="20"/>
 </map>

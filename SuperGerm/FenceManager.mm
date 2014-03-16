@@ -22,32 +22,14 @@
     return  self;
 }
 
--(void)addFenceInTileMap:(CCTMXTiledMap *)tileMap
+- (void)addFence:(id)obj atPosition:(CGPoint)position
 {
-    for (CCTMXObjectGroup* objectGroup in [tileMap objectGroups])
-    {
-        for( id object in [objectGroup objects] )
-        {
-            
-            NSString* groupName = [objectGroup groupName];
-            Class fenceClass = NSClassFromString(groupName);
-            NSObject* obj = [[[fenceClass alloc] init] autorelease];
-            if (fenceClass && [obj isKindOfClass:[Fence class]])
-            {
-                int x = [object[@"x"] integerValue];
-                int y = [object[@"y"] integerValue];
-                
-                Fence* fence = (Fence*)obj;
-                [[[ControlCenter mapManager] actionSpriteLayer] addChild:fence];
-                [fence setPosition:ccp((x + tileMap.tileSize.width/2)/2, (y+tileMap.tileSize.height/2)/2)];
-                
-                [fence setupBody];
-                //            [fence start];
-                
-                [_fences addObject:fence];
-            }
-		}
-    }
+    Fence* fence = (Fence*)obj;
+    [[[ControlCenter mapManager] actionSpriteLayer] addChild:fence];
+    [fence setPosition:position];
+    [fence setupBody];
+    [_fences addObject:fence];
+
 }
 
 -(void) update:(ccTime)delta

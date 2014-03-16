@@ -15,4 +15,6 @@
 -(BOOL)isAwake;
 -(void)setAwake:(BOOL)awake;
 - (BOOL)isInScreen;
+@property (nonatomic,retain) NSDictionary *properties;
+@property (nonatomic,retain) NSDictionary *customProperties;
 @end

@@ -190,17 +190,17 @@
 
 -(void) endContactWithMapElement:(GB2Contact*)contact
 {
-    NSString *myfixtureId = (NSString *)contact.ownFixture->GetUserData();
-    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
-
-//    if ([myfixtureId isEqualToString:@"left_down_Sensor"] && [otherfixtureId isEqualToString:@"floor"])
-//    {
-//        [self turnDirection:-1];
-//    }
-//    else if ([myfixtureId isEqualToString:@"right_down_Sensor"] && [otherfixtureId isEqualToString:@"floor"])
-//    {
-//        [self turnDirection:1];
-//    }
+//    NSString *myfixtureId = (NSString *)contact.ownFixture->GetUserData();
+//    NSString *otherfixtureId = (NSString *)contact.otherFixture->GetUserData();
+//
+////    if ([myfixtureId isEqualToString:@"left_down_Sensor"] && [otherfixtureId isEqualToString:@"floor"])
+////    {
+////        [self turnDirection:-1];
+////    }
+////    else if ([myfixtureId isEqualToString:@"right_down_Sensor"] && [otherfixtureId isEqualToString:@"floor"])
+////    {
+////        [self turnDirection:1];
+////    }
 
 }
 

@@ -10,7 +10,7 @@
 
 @interface PropManager : NSObject
 + (PropManager *) sharedPropManager;
-- (void)addPropInTileMap:(CCTMXTiledMap *)tileMap;
 - (int)getCoinCount;
 - (void)addCoin;
+- (void)addProp:(id)obj atPositon:(CGPoint)position;
 @end

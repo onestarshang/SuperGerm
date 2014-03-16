@@ -8,12 +8,7 @@
 
 #import "HudLayer.h"
 #import "HealthHeart.h"
-//#import "CCProgressTimer.h"
-//#import "CCLabelTTF.h"
-//#import "CGPointExtension.h"
-//#import "Define.h"
-//#import "CCDirector.h"
-//#import "CCLabelBMFont.H"
+#import "ControlCenter.h"
 
 @implementation HudLayer
 {
@@ -56,6 +51,13 @@
     }
     
     return self;
+}
+
+- (void)update:(ccTime)delta
+{
+    [self updateHealth:[ControlCenter player].health];
+    [self updateScore:[[ControlCenter worldLayer] getScore]];
+    [self updateCoinCount:[[ControlCenter worldLayer] getCoinCount]];
 }
 
 -(void)updateHealthPercent:(float)percent

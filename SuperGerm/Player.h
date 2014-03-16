@@ -41,4 +41,5 @@
 @property (nonatomic,retain) CCSprite* hitEffect;
 @property (nonatomic)int contactFloorCount;
 @property (nonatomic)int savedEnergy;
+@property (nonatomic) CGPoint absoluteSpeed;
 @end

@@ -9,7 +9,7 @@
 #import "Fence.h"
 
 @interface FenceManager : NSObject
--(void)addFenceInTileMap:(CCTMXTiledMap *)tileMap;
--(void) update:(ccTime)delta;
+- (void) update:(ccTime)delta;
+- (void)addFence:(id)obj atPosition:(CGPoint)position;
 + (FenceManager *) sharedFenceManager;
 @end

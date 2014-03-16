@@ -36,6 +36,7 @@ const int SPEED = 6;
     int hit3count;
     int hit4count;
     int hurt3count;
+    int jumpAccelerationCount;
     
     /**
      * This is the rate at which the hero speeds up when you move him left and right.
@@ -63,7 +64,6 @@ const int SPEED = 6;
 {
     if ((self = [super initWithSpriteFrameName:@"standby/1.png"]))
     {
-//        [self setAnchorPoint:ccp(0.3,0.2)];
         _playerState = kState_NOthing;
         
         self.health = 3;
@@ -78,7 +78,6 @@ const int SPEED = 6;
         b2BodyDef ballBodyDef;
         ballBodyDef.type = b2_dynamicBody;
         ballBodyDef.userData = self;
-//        ballBodyDef.linearDamping = 5;
         _body = [WorldLayer world]->CreateBody(&ballBodyDef);
         _body->SetFixedRotation(YES);
         _body->SetGravityScale(2);
@@ -87,22 +86,18 @@ const int SPEED = 6;
         
         _lastAttackTime = clock();
         
-//        AnimationWapper *actionProvider = [[[AnimationWapper alloc] init] autorelease];
-        
         self.hitEffect = [CCSprite spriteWithSpriteFrameName:@"hitEffect/01_01.png"];
         
         [self replaceBodyShape:_body withShapeName:@"standby"];
         
         acceleration = 1;
         maxVelocity = 6;
-        jumpHeight = 13;
-        jumpAcceleration = 0.3;
-        
-        
+        jumpHeight = 12;
+        jumpAcceleration = 1.6;
+        jumpAccelerationCount = 0;
     }
     
     return self;
-    
 }
 
 - (void)addShader
@@ -199,14 +194,13 @@ const int SPEED = 6;
 
         [self stopAllActions];
         [self runAction:_standbyAction];
-//        [_standbyAction release];
     }
 }
 
 -(void)jumpCallBack
 {
     _playerState = kState_NOthing;
-    [self replaceBodyShape:_body withShapeName:@"standby"];
+//    [self replaceBodyShape:_body withShapeName:@"standby"];
     [self playStandbyAnimation];
 }
 
@@ -235,7 +229,6 @@ const int SPEED = 6;
     }
     
 }
-
 
 -(void)moveAnimationCallBack
 {
@@ -400,70 +393,55 @@ const int SPEED = 6;
         hit4count = 0;
         [self hitAnimationCallback];
     }
-    
-//    _body->ApplyForceToCenter(b2Vec2(50,50));
 }
-
-
-
 
 -(void) playHitAnimation
 {
     if (_playerState == kState_Standing ||_playerState == kState_Running ||_playerState == kState_Jumping || _playerState == kState_NOthing) {
         
         [self stopAllActions];
-
+        
         NSArray *hurtAmount = @[@10,@10,@20,@20,@20];
         
         _playerState = kState_Hitting;
-       
-//        if (_currentAttacType > 5) {
-//            [self playBodyBomb];
-//        }
-//        else
-//        {
+        
         _currentAttacType =  0;//_currentAttacType%5;
-            
-//            NSLog(@"_currentAttacType %d", _currentAttacType);
         
         _currentAttacHurt =  [hurtAmount[_currentAttacType] intValue];
-//            [self replaceBodyShape:_body withShapeName:[NSString stringWithFormat:@"hit",_currentAttacType]];
-                    [self replaceBodyShape:_body withShapeName:@"hit"];
-            
-            CCAction * hitAction;
-            AnimationWapper *wapper = [[[AnimationWapper alloc] init] autorelease];
-            
-            float animationInterval = 0.02;
-
-            switch (_currentAttacType) {
-                case 0:
-                    hitAction = [wapper actionWithPrefix:@"hit1/" suffix:@".png" frame:7 frameDelay:animationInterval target:self callback:nil];
-                    [self schedule:@selector(hit0Update) interval:animationInterval repeat:6  delay:0];
-                    break;
-                case 1:
-                    hitAction = [wapper actionWithPrefix:@"hit2/" suffix:@".png" frame:9 frameDelay:animationInterval target:self callback:nil];
-                    [self schedule:@selector(hit1Update) interval:animationInterval repeat:8 delay:0];
-                    _body->ApplyLinearImpulse(b2Vec2(_body->GetMass()*10*self.scaleX,0), _body->GetWorldCenter());
-                    break;
-                case 2:
-                    hitAction = [wapper actionWithPrefix:@"hit3/" suffix:@".png" frame:16 frameDelay:animationInterval  target:self callback:nil];
-                    [self schedule:@selector(hit2Update) interval:animationInterval repeat:15 delay:0];
-                    break;
-                case 3:
-                    hitAction = [wapper actionWithPrefix:@"hit4/" suffix:@".png" frame:23 frameDelay:animationInterval  target:self callback:nil];
-                    [self schedule:@selector(hit3Update) interval:animationInterval repeat:22 delay:0];
-                    break;
-                case 4:
-                    hitAction = [wapper actionWithPrefix:@"hit5/" suffix:@".png" frame:36 frameDelay:animationInterval target:self callback:nil];
-                    [self schedule:@selector(hit4Update) interval:animationInterval repeat:35 delay:0];
-                    break;
-                default:
-                    break;
-            }
-            
-            [self runAction:hitAction];
-//        [self addLightEffect];
-//    }
+        [self replaceBodyShape:_body withShapeName:@"hit"];
+        
+        CCAction * hitAction;
+        AnimationWapper *wapper = [[[AnimationWapper alloc] init] autorelease];
+        
+        float animationInterval = 0.02;
+        
+        switch (_currentAttacType) {
+            case 0:
+                hitAction = [wapper actionWithPrefix:@"hit1/" suffix:@".png" frame:7 frameDelay:animationInterval target:self callback:nil];
+                [self schedule:@selector(hit0Update) interval:animationInterval repeat:6  delay:0];
+                break;
+            case 1:
+                hitAction = [wapper actionWithPrefix:@"hit2/" suffix:@".png" frame:9 frameDelay:animationInterval target:self callback:nil];
+                [self schedule:@selector(hit1Update) interval:animationInterval repeat:8 delay:0];
+                _body->ApplyLinearImpulse(b2Vec2(_body->GetMass()*10*self.scaleX,0), _body->GetWorldCenter());
+                break;
+            case 2:
+                hitAction = [wapper actionWithPrefix:@"hit3/" suffix:@".png" frame:16 frameDelay:animationInterval  target:self callback:nil];
+                [self schedule:@selector(hit2Update) interval:animationInterval repeat:15 delay:0];
+                break;
+            case 3:
+                hitAction = [wapper actionWithPrefix:@"hit4/" suffix:@".png" frame:23 frameDelay:animationInterval  target:self callback:nil];
+                [self schedule:@selector(hit3Update) interval:animationInterval repeat:22 delay:0];
+                break;
+            case 4:
+                hitAction = [wapper actionWithPrefix:@"hit5/" suffix:@".png" frame:36 frameDelay:animationInterval target:self callback:nil];
+                [self schedule:@selector(hit4Update) interval:animationInterval repeat:35 delay:0];
+                break;
+            default:
+                break;
+        }
+        
+        [self runAction:hitAction];
     }
 }
 
@@ -494,15 +472,12 @@ const int SPEED = 6;
     if (self.isTouchingA) {
          [self playHitAnimation];
         self.isTouchingA = NO;
-//        _body->SetLinearVelocity(b2Vec2(0,speed.y));
-        speed.x = 0;
+        speed.x = self.absoluteSpeed.x;
     }
     else if (self.isTouchingR)
     {
-//        _playerState != kState_Hitting &&
         if ( _playerState != kState_BeingHurt) {
-            speed.x += acceleration;
-//            _body->ApplyLinearImpulse(b2Vec2((SPEED*_body->GetMass() - speed.x*_body->GetMass()),0),_body->GetWorldCenter());
+            speed.x += (acceleration + fabsf(self.absoluteSpeed.x));
             [self playRunAnimation];
         }
         self.isTouchingR = NO;
@@ -511,32 +486,45 @@ const int SPEED = 6;
     else if (self.isTouchingL)
     {
         if (_playerState != kState_BeingHurt) {
-            speed.x -= acceleration;
-//                _body->ApplyLinearImpulse(b2Vec2((-SPEED*_body->GetMass() - speed.x*_body->GetMass()),0),_body->GetWorldCenter());
-                [self playRunAnimation];
+            speed.x -= (acceleration + fabsf(self.absoluteSpeed.x));
+            [self playRunAnimation];
             }
         self.isTouchingL = NO;
         [self turnDirection:-1];
     }
     else
     {
-        speed.x = 0;
+        speed.x = self.absoluteSpeed.x;
+        if (self.absoluteSpeed.y != 0) {
+            _body->SetGravityScale(0);
+            speed.y = self.absoluteSpeed.y;
+        }
+        else
+        {
+            _body->SetGravityScale(2);
+        }
+//        speed.y = (self.absoluteSpeed.y==0)?speed.y:self.absoluteSpeed.y ;//>0?self.absoluteSpeed.y:speed.y;
         [self playStandbyAnimation];
     }
     
     BOOL _onGround = self.contactFloorCount > 0;
     
-    if (_onGround && self.isTouchingB)
+    if (_onGround && self.isTouchingB && jumpAccelerationCount == 0)
     {
         speed.y = jumpHeight;
         [self playBigJumpAnimaiton];
-        //_onGround = false; // also removed in the handleEndContact. Useful here if permanent contact e.g. box on hero.
     }
     
-    if (self.isTouchingB && !_onGround && speed.y > 0)
+    if (self.isTouchingB && !_onGround && jumpAccelerationCount<5)
     {
         [self playSmallJumpAnimaiton];
         speed.y += jumpAcceleration;
+        jumpAccelerationCount++;
+        CCLOG(@"jumpAccelerationCount:%d",jumpAccelerationCount);
+    }
+    else if (!self.isTouchingB)
+    {
+        jumpAccelerationCount = 0;
     }
     
     if (speed.x > maxVelocity) {
@@ -547,8 +535,12 @@ const int SPEED = 6;
         speed.x = -maxVelocity;
     }
     
-    
     _body->SetLinearVelocity(speed);
+    
+    if (_body->GetPosition().y < -100) {
+        self.health = 0;
+    }
+    
     [self sythShapePosition];
 }
 
@@ -599,7 +591,6 @@ const int SPEED = 6;
         _playerState = kState_BigAttack;
         AnimationWapper *wapper = [[[AnimationWapper alloc] init] autorelease];
         CCAction* hit4 = [wapper actionWithName:@"playerAnimation1/hit5_" frame:18 target:self callback:@selector(bigAttackAnimationCallback)];
-//        CCAction *hit4 = [wapper a]
         [self stopAllActions];
         [self runAction:hit4];
         [[ControlCenter germManager] dealWithBigAttack];
@@ -636,7 +627,6 @@ const int SPEED = 6;
         _savedEnergy+=1;
         [self addHitEffect:germ];
         
-//        NSLog(@"attack interval %f",clock()-_lastAttackTime);
         if ((clock()-_lastAttackTime) < 8000000) {
             _combo++;
         }
@@ -647,7 +637,7 @@ const int SPEED = 6;
         }
         
         AnimateLabel *label = [[[AnimateLabel alloc] init] autorelease];
-        [label createBMLabelSting:[NSString stringWithFormat:@"+%d Hit",_combo+1] pistion:ccp(SCREEN.width*4/5,SCREEN.height*2/3) parent:[GamePlayScene lebalLayer] withDuration:1];
+        [label createBMLabelSting:[NSString stringWithFormat:@"+%d Hit",_combo] pistion:ccp(SCREEN.width*4/5,SCREEN.height*2/3) parent:[GamePlayScene lebalLayer] withDuration:1];
         _lastAttackTime = clock();
     }
 }
@@ -664,14 +654,9 @@ const int SPEED = 6;
 -(void) beginContactWithMapElement:(GB2Contact*)contact
 {
     NSString *fixtureId = (NSString *)contact.ownFixture->GetUserData();
-    NSString *otherFixtureId = (NSString *)contact.otherFixture->GetUserData();
     
     if ([fixtureId isEqualToString:@"player_body"]) {
         self.contactFloorCount++;
-    }
-    
-    if ([otherFixtureId isEqualToString:@"megma"] && [fixtureId isEqualToString:@"megmaSensor"]) {
-        self.health = 0;
     }
 }
 
@@ -714,22 +699,6 @@ bool poweradded = NO;
     }
     else
     {
-////        b2Vec2 gravity = [WorldLayer world]->GetGravity();
-//        if (self.contactFloorCount > 0 && power<0.15) {
-//            poweradded = NO;
-//            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*3), _body->GetWorldCenter());
-//            //            NSLog(@"======");
-//            [self playSmallJumpAnimaiton];
-////            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
-//        }
-//        else if (power>=0.15 && !poweradded)
-//        {
-//            poweradded = YES;
-//            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*7), _body->GetWorldCenter());
-//            //            NSLog(@"++++");
-//            [self playBigJumpAnimaiton];
-////            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
-//        }
         if (power) {
             self.isTouchingB = YES;
         }
@@ -737,7 +706,6 @@ bool poweradded = NO;
         {
             self.isTouchingB = NO;
         }
-        
     }
 }
 
@@ -793,28 +761,14 @@ bool poweradded = NO;
     CCAction *repeat = [CCRepeatForever actionWithAction:(CCActionInterval *)bombAction];
     [self runAction:repeat];
     [self replaceBodyShape:_body withShapeName:@"bomb"];
-    
-//    _body->SetLinearDamping(0.5);
-//    _body->SetGravityScale(5);
-//    _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*70), _body->GetWorldCenter());
     [self scheduleOnce:@selector(resetBodyPhisic) delay:6];
     [self schedule:@selector(playBodyBombUpdate)];
-    [[ControlCenter mapManager] coverAllMegma:YES];
-//    [[ControlCenter germManager] setAllActive:NO];
     _invincible = YES;
 }
 
 int bombPlayCount;
 -(void)playBodyBombUpdate
 {
-//    b2Vec2 currentLinearVelocity = _body->GetLinearVelocity();
-//    if (currentLinearVelocity.x<0) {
-//        _body->SetLinearVelocity(b2Vec2(-currentLinearVelocity.x,currentLinearVelocity.y));
-//    }
-    
-//    [[ControlCenter germManager]  bombPlayed];
-    
-//    _body->ApplyForceToCenter(b2Vec2(_body->GetMass()*500,0));
     if (bombPlayCount>10) {
         bombPlayCount = 0;
         [self attactEnemies];
@@ -827,21 +781,11 @@ int bombPlayCount;
 
 -(void)resetBodyPhisic
 {
-//    _body->SetLinearDamping(5);
-//    _body->SetLinearDamping(0);
-//    _body->SetGravityScale(2);
     [self unschedule:@selector(playBodyBombUpdate)];
     _invincible = NO;
-//    [[ControlCenter germManager] setAllActive:YES];
-    [[ControlCenter mapManager] coverAllMegma:NO];
-    
     _playerState = kState_NOthing;
     [self replaceBodyShape:_body withShapeName:@"standby"];
     
-//    CGPoint safePosition = [[ControlCenter mapManager] nearestSafePosition];
-//    
-//    
-//    _body->SetTransform(b2Vec2(safePosition.x/PTM_RATIO, safePosition.y/PTM_RATIO), 0);
     _currentAttacType = 0;
     _combo = 0;
     
@@ -863,16 +807,6 @@ int bombPlayCount;
 
 }
 
-- (void)addLightEffect
-{
-//    CCSprite *light = [CCSprite spriteWithFile:@"white.png"];
-//    [light setColor:ccWHITE];
-//    [light setScale:0.5];
-    ccBlendFunc cbl = {GL_ONE, GL_ONE};
-    [self setBlendFunc:cbl];
-//    [self addChild:light];
-}
-
 -(b2Fixture*)getFixtureById:(NSString*)id
 {
     for (b2Fixture* f = _body->GetFixtureList(); f; f = f->GetNext()) {
@@ -891,7 +825,6 @@ int bombPlayCount;
 
 -(void)meetFireBall
 {
-//    self.health = 0;
     [self playHurtAnimation:2];
 }
 @end

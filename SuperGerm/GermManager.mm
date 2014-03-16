@@ -100,6 +100,15 @@ const int germCount = 12;
     }
 }
 
+- (void)addGerm:(id)obj atPosition:(CGPoint)position
+{
+    Germ *germ = (Germ*)obj;
+    [_parent addChild:germ];
+    [germ setPosition:position];
+    [germ setupBody];
+    [_germs addObject:germ];
+}
+
 -(void) update:(ccTime)delta withMapXrange:(MapXRange) mapXRange;
 {
     
@@ -184,54 +193,6 @@ const int germCount = 12;
         }
     }
     return YES;
-}
-
--(void)addRondomGerm:(int)count withMapXrange:(MapXRange) mapXRange
-{
-    for (int i=0; i<count; i++) {
-        // Read class
-        NSString* className = frandom_range(1,10)<10?@"Germ":@"LandGerm";
-        
-        Class germClass = NSClassFromString(className);
-        
-        Germ* germ = [[germClass alloc] init];
-        
-//        Germ *germ = [[Germ alloc] init];
-        [_parent addChild:germ];
-        germ.position = ccp(_player.position.x + frandom_range(0, min(mapXRange.right-_player.position.x, SCREEN.width)),_player.position.y + frandom_range(0, SCREEN.height));
-    
-        [germ setupBody];
-//        [germ playStandByAnimation];
-        [_germs addObject:germ];
-    }
-}
-
-- (void)addGerm:(Germ *)germ position:(CGPoint)position
-{
-    [_parent addChild:germ];
-    [germ setPosition:position];
-    [germ setupBody];
-    [_germs addObject:germ];
-}
-
--(void)addRondomGerm:(int)count atPostion:(CGPoint)position
-{
-    for (int i=0; i<count; i++) {
-        // Read class
-        NSString* className = frandom_range(1,10)<8?@"Germ":@"LandGerm";
-        
-        Class germClass = NSClassFromString(className);
-        
-        Germ* germ = [[germClass alloc] init];
-        
-        //        Germ *germ = [[Germ alloc] init];
-        [_parent addChild:germ];
-        germ.position = position;
-        
-        [germ setupBody];
-//        [germ playEnterAnimation];
-        [_germs addObject:germ];
-    }
 }
 
 -(int)getScore

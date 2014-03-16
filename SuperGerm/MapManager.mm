@@ -78,16 +78,7 @@ int mapSection[5] = {1800,2800,3300,4000,4500 };
 
 -(CGSize)mapSize
 {
-//    float width = 0;
-//    float height = 0;
-//    for (int i=0; i<[elementArray count]; i++) {
-//        width += ((MapElement*)[elementArray objectAtIndex:i]).size.width;
-//        height += ((MapElement*)[elementArray objectAtIndex:i]).size.height;
-//
-//    }
-    
     return _mapSize;
-//    return CGSizeMake(width, height);
 }
 
 -(MapXRange)mapXRange
@@ -98,100 +89,25 @@ int mapSection[5] = {1800,2800,3300,4000,4500 };
     return result;
 }
 
-//static int sameOffset = 0;
 -(void)addElement
 {
-//    NSLog(@"currentMapHeight %d",currentMapHeight);
-//    NSString* mapName;
-//    if (frandom< 0.9 && lastMagma != [elementArray count] && [elementArray count] > 5 && sameOffset == 1) {
-//        mapName = @"tileMap/map0.tmx";
-//        lastMagma = [elementArray count] +1;
-////        [self addMegma];
-//    }
-//    else
-//    {
-//        int offset;
-//        if (lastMagma == [elementArray count]) {
-//            offset = 1;
-//        }
-//        else
-//        {
-//            if (sameOffset == 0) {
-//                offset = 0;
-//                sameOffset = 1;
-//            }
-//            else
-//            {
-//                sameOffset = 0;
-//                offset = random_range(-1, 1);
-//
-//            }
-//        }
-//        
-////        NSLog(@"offset %d",offset)
-//        currentMapHeight = currentMapHeight + offset;
-//        currentMapHeight = MIN(currentMapHeight, maxMapHeight);
-//        currentMapHeight = MAX(currentMapHeight, minMapHeight);
-//        mapName = [NSString stringWithFormat:@"map%d.tmx",currentMapHeight];
-//    }
-    
     NSString *mapName = [NSString stringWithFormat:@"level%d.tmx",_level];
-    
     MapElement* element = [[[MapElement alloc] initWithMapName:mapName withPositon:ccp([self mapSize].width, 0) withHeight:currentMapHeight] autorelease];
     _mapSize = CGSizeMake(_mapSize.width+element.size.width, max(_mapSize.height, element.size.height));
     [_maplayer addChild:element];
     [elementArray addObject:element];
 }
 
-
-
-int gapCount = 0;
 -(void)update:(ccTime)delta withWordPotion:(CGPoint)worldPostion
 {
-//    if ([[GermManager sharedGermManager] isCurrentSessionClear:_rightUpEdge.x]) {
-//        
-//        if (currentSection + 20*tileSize <= 80*tileSize) {
-//            currentSection+=20*tileSize;
-//            stage++;
-//            if (-worldPostion.x > _leftDownEdge.x) {
-//                _leftDownEdge.x = (int)(-worldPostion.x/tileSize)*tileSize;
-//            }
-//            _rightUpEdge = ccp(currentSection, [self mapSize].height);
-//            
-//            [self addStageLabel];
-//            
-//            NSMutableArray* deletElements = [[[NSMutableArray alloc] init] autorelease];
-//            for (MapElement* element in elementArray) {
-//                if (element.position.x + element.size.width< _leftDownEdge.x) {
-//                    [deletElements addObject:element];
-//                }
-//            }
-//            
-//            for (MapElement* element in deletElements) {
-//                [element cleanSelf];
-//            }
-//        }
-//        
-//
-//    }
-//    _player.position.x > [self mapSize].width - SCREEN.width &&
-    
-//    if ([self mapSize].width < _rightUpEdge.x) {
-//        
-//        [self addElement];
-//    }
-    
-//    [self updateWall];
 }
 
 -(void) addStageLabel
 {
-//    CGPoint labelPostion = ccpAdd(ccp(0,100), _player.position);
     CGPoint labelPostion = ccp(SCREEN.width/2,SCREEN.height/2);
     
     AnimateLabel *label = [[[AnimateLabel alloc] init] autorelease];
     [label createBMLabelSting:[NSString stringWithFormat:@"STAGE %d",stage] pistion:labelPostion parent:[GamePlayScene lebalLayer] withDuration:2];
-
 }
 
 -(void)updateWall
@@ -227,25 +143,25 @@ int gapCount = 0;
     rightWall->SetTransform(b2Vec2(_rightUpEdge.x/PTM_RATIO,0), 0);
 }
 
--(CGPoint)nearestSafePosition
-{
-    Player *player = [ControlCenter player];
-    
-    MapElement *map = [elementArray objectAtIndex:0];
-    CCTMXTiledMap *tileMap = map.tileMap;
-    CCTMXLayer *maplayer = [tileMap layerNamed:@"map1"];
-    
-    int tileX = player.position.x/(tileMap.tileSize.width/2);
-    
-    while ([self floorAt:tileX mapLayer:maplayer map:map].x < 0) {
-        tileX++;
-    }
-    
-    CGPoint safetile = [self floorAt:tileX mapLayer:maplayer map:map];
-    return ccp((safetile.x +1)*tileMap.tileSize.width/2, (tileMap.mapSize.height - safetile.y + 1)*tileMap.tileSize.height/2);
-    
-}
-    
+//-(CGPoint)nearestSafePosition
+//{
+//    Player *player = [ControlCenter player];
+//    
+//    MapElement *map = [elementArray objectAtIndex:0];
+//    CCTMXTiledMap *tileMap = map.tileMap;
+//    CCTMXLayer *maplayer = [tileMap layerNamed:@"map1"];
+//    
+//    int tileX = player.position.x/(tileMap.tileSize.width/2);
+//    
+//    while ([self floorAt:tileX mapLayer:maplayer map:map].x < 0) {
+//        tileX++;
+//    }
+//    
+//    CGPoint safetile = [self floorAt:tileX mapLayer:maplayer map:map];
+//    return ccp((safetile.x +1)*tileMap.tileSize.width/2, (tileMap.mapSize.height - safetile.y + 1)*tileMap.tileSize.height/2);
+//    
+//}
+
 -(CGPoint)floorAt:(int)tileX mapLayer:(CCTMXLayer *)maplayer map:(MapElement *)map
 {
     CCTMXTiledMap *tileMap = map.tileMap;
@@ -277,13 +193,6 @@ int gapCount = 0;
     return [[GermManager sharedGermManager] getKillNum];
 }
 
--(void)coverAllMegma:(BOOL)isCover
-{
-    for (MapElement* element in elementArray) {
-        [element coverMegma:isCover];
-    }
-}
-
 -(CCNode*)actionSpriteLayer
 {
     return _actionSpriteLayer;
@@ -295,8 +204,6 @@ int gapCount = 0;
     [elementArray dealloc];
     instance_ = nil;
 }
-
-
 
 static MapManager *instance_ = nil;
 + (MapManager *) sharedMapManager

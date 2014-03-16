@@ -12,19 +12,14 @@
 @class Player;
 
 @interface MapManager : CCSprite
-{
-    
-}
--(void)initWithMapLayer:(CCNode *)maplayer actionSpriteLayer:(CCNode*) actionSpriteLayer level:(int)level player:(Player*) player;
--(CGSize) mapSize;
--(MapXRange)mapXRange;
 @property (nonatomic)CGPoint leftDownEdge;
 @property (nonatomic)CGPoint rightUpEdge;
--(void)update:(ccTime)delta withWordPotion:(CGPoint)worldPostion;
--(int)getScore;
--(int)getKillNum;
--(void)coverAllMegma:(BOOL)isCover;
--(CCNode*)actionSpriteLayer;
--(CGPoint)nearestSafePosition;
+- (void)initWithMapLayer:(CCNode *)maplayer actionSpriteLayer:(CCNode*) actionSpriteLayer level:(int)level player:(Player*) player;
+- (CGSize) mapSize;
+- (MapXRange)mapXRange;
+- (void)update:(ccTime)delta withWordPotion:(CGPoint)worldPostion;
+- (int)getScore;
+- (int)getKillNum;
+- (CCNode*)actionSpriteLayer;
 + (MapManager*) sharedMapManager;
 @end

@@ -185,7 +185,7 @@
         self.AIModel = WAITING_MODEL;
         DripGerm *drip = [[DripGerm alloc] init];
         drip.AIModel = FLYING_MODEL;
-        [[GermManager sharedGermManager] addGerm:drip position:ccp(self.position.x,self.position.y-30)];
+        [[GermManager sharedGermManager] addGerm:drip atPosition:ccp(self.position.x,self.position.y-30)];
         [drip playDripDorpAnimaion];
         NSLog(@"drip germ direction %d",self.dire);
     }

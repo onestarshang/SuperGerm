@@ -50,6 +50,7 @@
 		29258DC1183BAC8C006F6707 /* MapManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29258DC0183BAC8C006F6707 /* MapManager.mm */; };
 		29260004189213D5003258EE /* CSContact.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 29260002189213BF003258EE /* CSContact.fsh */; };
 		2926000718924A4F003258EE /* CSRed.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2926000518924A3D003258EE /* CSRed.fsh */; };
+		2943272A18D33AF10091AD58 /* tileMap_50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2943272918D33AF10091AD58 /* tileMap_50.png */; };
 		294ADF46186C622D00C20EC4 /* LandGerm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 294ADF45186C622D00C20EC4 /* LandGerm.mm */; };
 		29597682182F890100CF64AF /* hittext.png in Resources */ = {isa = PBXBuildFile; fileRef = 29597680182F890100CF64AF /* hittext.png */; };
 		29597683182F890100CF64AF /* hittext.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 29597681182F890100CF64AF /* hittext.fnt */; };
@@ -93,6 +94,7 @@
 		296C33F218CA213300EE1CC0 /* tileMap_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 296C33F118CA213300EE1CC0 /* tileMap_3.png */; };
 		296C33F418CA24C000EE1CC0 /* level5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 296C33F318CA24C000EE1CC0 /* level5.tmx */; };
 		296C33F618CAE71100EE1CC0 /* level6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 296C33F518CAE71100EE1CC0 /* level6.tmx */; };
+		296C33F918CC9FC200EE1CC0 /* Megama.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296C33F818CC9FC200EE1CC0 /* Megama.mm */; };
 		296D978418B871EE00930B1F /* MovingPlatform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296D978318B871EE00930B1F /* MovingPlatform.mm */; };
 		296D978818B87C9D00930B1F /* tileMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 296D978718B87C9D00930B1F /* tileMap.png */; };
 		2972746018B9C7A200B8471E /* BulletGerm.png in Resources */ = {isa = PBXBuildFile; fileRef = 2972745F18B9C7A200B8471E /* BulletGerm.png */; };
@@ -398,6 +400,7 @@
 		29260002189213BF003258EE /* CSContact.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CSContact.fsh; sourceTree = "<group>"; };
 		2926000518924A3D003258EE /* CSRed.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CSRed.fsh; sourceTree = "<group>"; };
 		29320F9A18A7AF22003E4FF5 /* SuperGerm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SuperGerm.entitlements; sourceTree = "<group>"; };
+		2943272918D33AF10091AD58 /* tileMap_50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tileMap_50.png; path = Resources/tileMap/tileMap_50.png; sourceTree = "<group>"; };
 		294ADF44186C622D00C20EC4 /* LandGerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandGerm.h; sourceTree = "<group>"; };
 		294ADF45186C622D00C20EC4 /* LandGerm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LandGerm.mm; sourceTree = "<group>"; };
 		29597680182F890100CF64AF /* hittext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hittext.png; path = Resources/hittext.png; sourceTree = "<group>"; };
@@ -447,6 +450,8 @@
 		296C33F118CA213300EE1CC0 /* tileMap_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tileMap_3.png; path = Resources/tileMap/tileMap_3.png; sourceTree = "<group>"; };
 		296C33F318CA24C000EE1CC0 /* level5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = level5.tmx; path = Resources/tileMap/level5.tmx; sourceTree = "<group>"; };
 		296C33F518CAE71100EE1CC0 /* level6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = level6.tmx; path = Resources/tileMap/level6.tmx; sourceTree = "<group>"; };
+		296C33F718CC9FC200EE1CC0 /* Megama.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Megama.h; sourceTree = "<group>"; };
+		296C33F818CC9FC200EE1CC0 /* Megama.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Megama.mm; sourceTree = "<group>"; };
 		296D978218B871EE00930B1F /* MovingPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingPlatform.h; sourceTree = "<group>"; };
 		296D978318B871EE00930B1F /* MovingPlatform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MovingPlatform.mm; sourceTree = "<group>"; };
 		296D978718B87C9D00930B1F /* tileMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tileMap.png; path = Resources/tileMap/tileMap.png; sourceTree = "<group>"; };
@@ -993,6 +998,8 @@
 				29248B971885930D00AA7F01 /* FenceManager.mm */,
 				296D978218B871EE00930B1F /* MovingPlatform.h */,
 				296D978318B871EE00930B1F /* MovingPlatform.mm */,
+				296C33F718CC9FC200EE1CC0 /* Megama.h */,
+				296C33F818CC9FC200EE1CC0 /* Megama.mm */,
 			);
 			name = fence;
 			sourceTree = "<group>";
@@ -1039,6 +1046,7 @@
 		29248BBE188E44FE00AA7F01 /* tileMap */ = {
 			isa = PBXGroup;
 			children = (
+				2943272918D33AF10091AD58 /* tileMap_50.png */,
 				296C33F518CAE71100EE1CC0 /* level6.tmx */,
 				296C33F318CA24C000EE1CC0 /* level5.tmx */,
 				296C33F118CA213300EE1CC0 /* tileMap_3.png */,
@@ -2173,6 +2181,7 @@
 				2972746018B9C7A200B8471E /* BulletGerm.png in Resources */,
 				29A8F99918C2466500460B97 /* enemy2.png in Resources */,
 				29607162186A9BA10003C942 /* ui.png in Resources */,
+				2943272A18D33AF10091AD58 /* tileMap_50.png in Resources */,
 				29607160186A9BA10003C942 /* ccbDefaultImages.png in Resources */,
 				29607136186A79A10003C942 /* ccbParticleSmoke.png in Resources */,
 				29248BA5188684E000AA7F01 /* release_notes.md in Resources */,
@@ -2344,6 +2353,7 @@
 				2984CCB51816C1A9001DBF9C /* CCActionPageTurn3D.m in Sources */,
 				2984CE311816C1AC001DBF9C /* b2BlockAllocator.cpp in Sources */,
 				2984CCF51816C1AA001DBF9C /* CCLabelTTF.m in Sources */,
+				296C33F918CC9FC200EE1CC0 /* Megama.mm in Sources */,
 				29248B901882BFF400AA7F01 /* LevelLayer.m in Sources */,
 				2984CD0E1816C1AA001DBF9C /* CCParticleBatchNode.m in Sources */,
 				2984CDF91816C1AC001DBF9C /* plane.c in Sources */,

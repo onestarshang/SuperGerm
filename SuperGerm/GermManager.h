@@ -18,10 +18,7 @@
 
 - (void) update:(ccTime) delta withMapXrange:(MapXRange) mapXRange;
 - (GermManager *) initWithTileMap:(CCTMXTiledMap *)tileMap player:(Player *)player parent:(CCLayer *)parent;
-- (void)addGermInTileMap:(CCTMXTiledMap *)tileMap;
-- (void)addRondomGerm:(int)count atPostion:(CGPoint)position;
 - (BOOL)isClear;
-- (void)addRondomGerm:(int) count withMapXrange:(MapXRange) mapXRange;
 - (void)initParent:(CCNode *)parent player:(Player *)player;
 - (int)getScore;
 - (int)getKillNum;
@@ -29,7 +26,7 @@
 - (void)setAllActive:(BOOL)isActive;
 - (BOOL)isCurrentSessionClear:(float)range;
 - (void)bombPlayed;
-- (void)addGerm:(Germ *)germ position:(CGPoint)position;
+- (void)addGerm:(id)obj atPosition:(CGPoint)position;
 
 + (GermManager *) sharedGermManager;
 @end

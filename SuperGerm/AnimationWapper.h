@@ -10,10 +10,9 @@
 #import "cocos2d.h"
 
 @interface AnimationWapper : NSObject
-//-(CCSprite *) addAnimation:(NSString *)actionName withFrameNum:(int)totalFrame atPosition:(CGPoint)postion inParent:(CCNode *)parent withPlistName:(NSString *)plistName withCallback:(SEL) callback target:(id) target;
--(CCAction *)actionWithName:(NSString *)name frame:(int)frame target:(id) target callback:(SEL)callback;
--(CCAction *)actionWithPrefix:(NSString *)prefix suffix:(NSString*)suffix frame:(int)frame target:(id) target callback:(SEL)callback;
--(CCAction *)actionWithPrefix:(NSString *)prefix suffix:(NSString*)suffix frame:(int)frame frameDelay:(float)delay target:(id) target callback:(SEL)callback;
 @property (nonatomic,retain) id target;
 @property (nonatomic) SEL callback;
+- (CCAction *)actionWithName:(NSString *)name frame:(int)frame target:(id) target callback:(SEL)callback;
+- (CCAction *)actionWithPrefix:(NSString *)prefix suffix:(NSString*)suffix frame:(int)frame target:(id) target callback:(SEL)callback;
+- (CCAction *)actionWithPrefix:(NSString *)prefix suffix:(NSString*)suffix frame:(int)frame frameDelay:(float)delay target:(id) target callback:(SEL)callback;
 @end

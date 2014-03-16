@@ -34,6 +34,4 @@
     BOOL yIn = worldPoint.y > -100 && worldPoint.y < SCREEN.height+100;
     return xIn && yIn;
 }
-
-
 @end
