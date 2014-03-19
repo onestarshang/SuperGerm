@@ -22,7 +22,7 @@
         self.ATK = 20;
         self.awakeDistance = SCREEN.width/2;
         self.AIModel = WAITING_MODEL;
-        WAITINGMODELLASTTIME = 1;
+        WAITINGMODELLASTTIME = 2;
         FLYINGMODELLASTTIME = 1.5;
         _awake = NO;
     }

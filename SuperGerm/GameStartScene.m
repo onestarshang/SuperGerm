@@ -19,15 +19,11 @@
 
 -(instancetype)init
 {
-    if (self = [super init]) {
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ui.plist" ];
-        
+    if (self = [super init]) {        
         CCSprite *background = [CCSprite spriteWithFile:@"Default-568h@2x.png"];
         [background setAnchorPoint:ccp(0, 0)];
         [self addChild:background];
     }
-
-    
     return self;
 }
 

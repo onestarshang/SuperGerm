@@ -46,28 +46,41 @@
 		
         if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
 			background = [CCSprite spriteWithFile:@"Default-568h@2x.png"];
-//			background.rotation = 90;
+			background.rotation = 90;
 		} else {
 			background = [CCSprite spriteWithFile:@"Default-568h@2x.png"];
+            background.rotation = 90;
 		}
 		// add the label as a child to this Layer
 		[self addChild: background];
         background.position = ccp(size.width/2, size.height/2);
         
-//        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"background.plist"];
-
-        
         self.touchEnabled = YES;
         
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ui.plist" ];
 	}
 	
 	return self;
 }
 
+- (void)onEnter
+{
+    CCSprite *pressStart = [CCSprite spriteWithSpriteFrameName:@"pressstart.png"];
+    [self addChild:pressStart];
+    [pressStart setPosition:ccp(SCREEN.width/3, SCREEN.height*2/3)];
+    
+    CCFiniteTimeAction *fadeIn = [CCFadeIn actionWithDuration:1];
+    CCFiniteTimeAction *fadeOut = [CCFadeOut actionWithDuration:1.5];
+    CCSequence *sequence = [CCSequence actionOne:fadeIn two:fadeOut];
+    
+    [pressStart runAction:[CCRepeatForever actionWithAction:sequence]];
+    
+    [super onEnter];
+}
+
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [[CCDirector sharedDirector] replaceScene:[MenuLayer scene]];
-//    [[CCDirector sharedDirector] replaceScene:[[GameStartScene alloc] init]];
 }
 
 @end

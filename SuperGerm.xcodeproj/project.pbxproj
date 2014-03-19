@@ -50,7 +50,6 @@
 		29258DC1183BAC8C006F6707 /* MapManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29258DC0183BAC8C006F6707 /* MapManager.mm */; };
 		29260004189213D5003258EE /* CSContact.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 29260002189213BF003258EE /* CSContact.fsh */; };
 		2926000718924A4F003258EE /* CSRed.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2926000518924A3D003258EE /* CSRed.fsh */; };
-		2943272A18D33AF10091AD58 /* tileMap_50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2943272918D33AF10091AD58 /* tileMap_50.png */; };
 		294ADF46186C622D00C20EC4 /* LandGerm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 294ADF45186C622D00C20EC4 /* LandGerm.mm */; };
 		29597682182F890100CF64AF /* hittext.png in Resources */ = {isa = PBXBuildFile; fileRef = 29597680182F890100CF64AF /* hittext.png */; };
 		29597683182F890100CF64AF /* hittext.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 29597681182F890100CF64AF /* hittext.fnt */; };
@@ -96,7 +95,6 @@
 		296C33F618CAE71100EE1CC0 /* level6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 296C33F518CAE71100EE1CC0 /* level6.tmx */; };
 		296C33F918CC9FC200EE1CC0 /* Megama.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296C33F818CC9FC200EE1CC0 /* Megama.mm */; };
 		296D978418B871EE00930B1F /* MovingPlatform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 296D978318B871EE00930B1F /* MovingPlatform.mm */; };
-		296D978818B87C9D00930B1F /* tileMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 296D978718B87C9D00930B1F /* tileMap.png */; };
 		2972746018B9C7A200B8471E /* BulletGerm.png in Resources */ = {isa = PBXBuildFile; fileRef = 2972745F18B9C7A200B8471E /* BulletGerm.png */; };
 		2972746218B9C7C900B8471E /* BulletGerm.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2972746118B9C7C900B8471E /* BulletGerm.plist */; };
 		2972746518B9D7F700B8471E /* BulletGerm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2972746418B9D7F700B8471E /* BulletGerm.mm */; };
@@ -310,6 +308,8 @@
 		2994BAE918BA1A0F00A21378 /* germ.png in Resources */ = {isa = PBXBuildFile; fileRef = 2994BAE818BA1A0F00A21378 /* germ.png */; };
 		2994BAEC18BA1DCD00A21378 /* Bullet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2994BAEB18BA1DCD00A21378 /* Bullet.mm */; };
 		2994BAF018BA3A1400A21378 /* HealthHeart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2994BAEF18BA3A1400A21378 /* HealthHeart.m */; };
+		2996FD8A18D89044009824E8 /* CCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2996FD8918D89044009824E8 /* CCScrollView.m */; };
+		2996FD9118DA092F009824E8 /* AreaLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2996FD9018DA092F009824E8 /* AreaLayer.m */; };
 		299BECF618969E2700CBBBAE /* level2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 299BECF518969E2700CBBBAE /* level2.tmx */; };
 		299BECFA18969FA500CBBBAE /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 299BECF918969FA500CBBBAE /* Level.m */; };
 		299BED021896A2D600CBBBAE /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 299BED011896A2D600CBBBAE /* GameModel.m */; };
@@ -317,7 +317,6 @@
 		299DA7DE1854B482006DD18B /* consolebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 299DA7DD1854B482006DD18B /* consolebackground.png */; };
 		299DA7E11854B8DD006DD18B /* CCJoyStick.m in Sources */ = {isa = PBXBuildFile; fileRef = 299DA7E01854B8DD006DD18B /* CCJoyStick.m */; };
 		29A6443E18A26D5000057DEB /* GameConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A6443D18A26D5000057DEB /* GameConstants.m */; };
-		29A8F99218C214AB00460B97 /* tileMap_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A8F99018C214AB00460B97 /* tileMap_2.png */; };
 		29A8F99318C214AB00460B97 /* level3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 29A8F99118C214AB00460B97 /* level3.tmx */; };
 		29A8F99618C22E2000460B97 /* CCCustomCCFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A8F99518C22E2000460B97 /* CCCustomCCFollow.m */; };
 		29A8F99918C2466500460B97 /* enemy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A8F99718C2466500460B97 /* enemy2.png */; };
@@ -400,7 +399,6 @@
 		29260002189213BF003258EE /* CSContact.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CSContact.fsh; sourceTree = "<group>"; };
 		2926000518924A3D003258EE /* CSRed.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CSRed.fsh; sourceTree = "<group>"; };
 		29320F9A18A7AF22003E4FF5 /* SuperGerm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SuperGerm.entitlements; sourceTree = "<group>"; };
-		2943272918D33AF10091AD58 /* tileMap_50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tileMap_50.png; path = Resources/tileMap/tileMap_50.png; sourceTree = "<group>"; };
 		294ADF44186C622D00C20EC4 /* LandGerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandGerm.h; sourceTree = "<group>"; };
 		294ADF45186C622D00C20EC4 /* LandGerm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LandGerm.mm; sourceTree = "<group>"; };
 		29597680182F890100CF64AF /* hittext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hittext.png; path = Resources/hittext.png; sourceTree = "<group>"; };
@@ -454,7 +452,6 @@
 		296C33F818CC9FC200EE1CC0 /* Megama.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Megama.mm; sourceTree = "<group>"; };
 		296D978218B871EE00930B1F /* MovingPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingPlatform.h; sourceTree = "<group>"; };
 		296D978318B871EE00930B1F /* MovingPlatform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MovingPlatform.mm; sourceTree = "<group>"; };
-		296D978718B87C9D00930B1F /* tileMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tileMap.png; path = Resources/tileMap/tileMap.png; sourceTree = "<group>"; };
 		2972745F18B9C7A200B8471E /* BulletGerm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BulletGerm.png; path = Resources/BulletGerm.png; sourceTree = "<group>"; };
 		2972746118B9C7C900B8471E /* BulletGerm.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BulletGerm.plist; path = Resources/BulletGerm.plist; sourceTree = "<group>"; };
 		2972746318B9D7F700B8471E /* BulletGerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletGerm.h; sourceTree = "<group>"; };
@@ -909,6 +906,10 @@
 		2994BAEB18BA1DCD00A21378 /* Bullet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Bullet.mm; sourceTree = "<group>"; };
 		2994BAEE18BA3A1400A21378 /* HealthHeart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthHeart.h; sourceTree = "<group>"; };
 		2994BAEF18BA3A1400A21378 /* HealthHeart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthHeart.m; sourceTree = "<group>"; };
+		2996FD8818D89044009824E8 /* CCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollView.h; sourceTree = "<group>"; };
+		2996FD8918D89044009824E8 /* CCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollView.m; sourceTree = "<group>"; };
+		2996FD8F18DA092F009824E8 /* AreaLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLayer.h; sourceTree = "<group>"; };
+		2996FD9018DA092F009824E8 /* AreaLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaLayer.m; sourceTree = "<group>"; };
 		299BECF518969E2700CBBBAE /* level2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = level2.tmx; path = Resources/tileMap/level2.tmx; sourceTree = "<group>"; };
 		299BECF818969FA500CBBBAE /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		299BECF918969FA500CBBBAE /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
@@ -920,7 +921,6 @@
 		299DA7E01854B8DD006DD18B /* CCJoyStick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCJoyStick.m; sourceTree = "<group>"; };
 		29A6443C18A26D5000057DEB /* GameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConstants.h; sourceTree = "<group>"; };
 		29A6443D18A26D5000057DEB /* GameConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameConstants.m; sourceTree = "<group>"; };
-		29A8F99018C214AB00460B97 /* tileMap_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tileMap_2.png; path = Resources/tileMap/tileMap_2.png; sourceTree = "<group>"; };
 		29A8F99118C214AB00460B97 /* level3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = level3.tmx; path = Resources/tileMap/level3.tmx; sourceTree = "<group>"; };
 		29A8F99418C22E2000460B97 /* CCCustomCCFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCustomCCFollow.h; sourceTree = "<group>"; };
 		29A8F99518C22E2000460B97 /* CCCustomCCFollow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCustomCCFollow.m; sourceTree = "<group>"; };
@@ -1046,14 +1046,11 @@
 		29248BBE188E44FE00AA7F01 /* tileMap */ = {
 			isa = PBXGroup;
 			children = (
-				2943272918D33AF10091AD58 /* tileMap_50.png */,
 				296C33F518CAE71100EE1CC0 /* level6.tmx */,
 				296C33F318CA24C000EE1CC0 /* level5.tmx */,
 				296C33F118CA213300EE1CC0 /* tileMap_3.png */,
 				296C33E518CA17B300EE1CC0 /* level4.tmx */,
-				29A8F99018C214AB00460B97 /* tileMap_2.png */,
 				29A8F99118C214AB00460B97 /* level3.tmx */,
-				296D978718B87C9D00930B1F /* tileMap.png */,
 				299BECF518969E2700CBBBAE /* level2.tmx */,
 				29248BA8188E44F600AA7F01 /* level1.tmx */,
 			);
@@ -1116,6 +1113,7 @@
 		294ADF40186C5CEF00C20EC4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				2996FD8B18DA0812009824E8 /* AreaScene */,
 				299BECFE1896A00700CBBBAE /* EndGameScene */,
 				299BECFD18969FF800CBBBAE /* GamePlayScene */,
 				299BECFC18969FE700CBBBAE /* StartScene */,
@@ -1330,6 +1328,7 @@
 		2984CC961816C1A9001DBF9C /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				2996FD8718D89044009824E8 /* CCScrollView */,
 				29248B9C188684E000AA7F01 /* TestFlightSDK2.1.3 */,
 				2984CFAA18197765001DBF9C /* GBox2D */,
 				2984CF261816C540001DBF9C /* CCControlExtension */,
@@ -1966,6 +1965,25 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		2996FD8718D89044009824E8 /* CCScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				2996FD8818D89044009824E8 /* CCScrollView.h */,
+				2996FD8918D89044009824E8 /* CCScrollView.m */,
+			);
+			name = CCScrollView;
+			path = libs/CCScrollView;
+			sourceTree = "<group>";
+		};
+		2996FD8B18DA0812009824E8 /* AreaScene */ = {
+			isa = PBXGroup;
+			children = (
+				2996FD8F18DA092F009824E8 /* AreaLayer.h */,
+				2996FD9018DA092F009824E8 /* AreaLayer.m */,
+			);
+			name = AreaScene;
+			sourceTree = "<group>";
+		};
 		299BECF718969F7100CBBBAE /* LevelScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -2159,7 +2177,6 @@
 				29607170186AA1B40003C942 /* ccbDefaultImages-ipad.plist in Resources */,
 				296C33EF18CA1F9F00EE1CC0 /* coin.mp3 in Resources */,
 				29607135186A79A10003C942 /* ccbParticleMagic.png in Resources */,
-				296D978818B87C9D00930B1F /* tileMap.png in Resources */,
 				2984CF521816C541001DBF9C /* README.md in Resources */,
 				29607138186A79A10003C942 /* ccbParticleStars.png in Resources */,
 				2960715F186A9BA10003C942 /* ccbDefaultImages-hd.png in Resources */,
@@ -2181,7 +2198,6 @@
 				2972746018B9C7A200B8471E /* BulletGerm.png in Resources */,
 				29A8F99918C2466500460B97 /* enemy2.png in Resources */,
 				29607162186A9BA10003C942 /* ui.png in Resources */,
-				2943272A18D33AF10091AD58 /* tileMap_50.png in Resources */,
 				29607160186A9BA10003C942 /* ccbDefaultImages.png in Resources */,
 				29607136186A79A10003C942 /* ccbParticleSmoke.png in Resources */,
 				29248BA5188684E000AA7F01 /* release_notes.md in Resources */,
@@ -2193,7 +2209,6 @@
 				2908193418462E8500019538 /* Icon.png in Resources */,
 				29607165186A9BB30003C942 /* ui-hd.plist in Resources */,
 				299DA7DC1854B475006DD18B /* console.png in Resources */,
-				29A8F99218C214AB00460B97 /* tileMap_2.png in Resources */,
 				2994BAE918BA1A0F00A21378 /* germ.png in Resources */,
 				298C1240187ED2E500285D58 /* hit_common.png in Resources */,
 				296C33F218CA213300EE1CC0 /* tileMap_3.png in Resources */,
@@ -2336,6 +2351,7 @@
 				2984CCA91816C1A9001DBF9C /* CCActionGrid3D.m in Sources */,
 				2984CD921816C1AB001DBF9C /* CCGLView.m in Sources */,
 				29A9208E185D66DA006B8C87 /* SneakyButton.m in Sources */,
+				2996FD9118DA092F009824E8 /* AreaLayer.m in Sources */,
 				298C123D1878714200285D58 /* ControlCenter.mm in Sources */,
 				2984CCD71816C1A9001DBF9C /* CCDirector.m in Sources */,
 				2984CDFD1816C1AC001DBF9C /* ray2.c in Sources */,
@@ -2462,6 +2478,7 @@
 				2984CF461816C541001DBF9C /* CCControlButton.m in Sources */,
 				2984CD7A1816C1AB001DBF9C /* CCDirectorIOS.m in Sources */,
 				2984CDFB1816C1AC001DBF9C /* quaternion.c in Sources */,
+				2996FD8A18D89044009824E8 /* CCScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

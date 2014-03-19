@@ -144,7 +144,7 @@ static CCLayer *_popLayer;
 
 -(void)initSound
 {
-    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"blue.mp3" loop:YES];
+//    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"blue.mp3" loop:YES];
 //    [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:1];
 }
 
