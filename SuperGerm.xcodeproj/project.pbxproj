@@ -310,6 +310,7 @@
 		2994BAF018BA3A1400A21378 /* HealthHeart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2994BAEF18BA3A1400A21378 /* HealthHeart.m */; };
 		2996FD8A18D89044009824E8 /* CCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2996FD8918D89044009824E8 /* CCScrollView.m */; };
 		2996FD9118DA092F009824E8 /* AreaLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2996FD9018DA092F009824E8 /* AreaLayer.m */; };
+		2996FD9518DA103B009824E8 /* SubLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2996FD9418DA103B009824E8 /* SubLevel.m */; };
 		299BECF618969E2700CBBBAE /* level2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 299BECF518969E2700CBBBAE /* level2.tmx */; };
 		299BECFA18969FA500CBBBAE /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 299BECF918969FA500CBBBAE /* Level.m */; };
 		299BED021896A2D600CBBBAE /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 299BED011896A2D600CBBBAE /* GameModel.m */; };
@@ -910,6 +911,8 @@
 		2996FD8918D89044009824E8 /* CCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollView.m; sourceTree = "<group>"; };
 		2996FD8F18DA092F009824E8 /* AreaLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLayer.h; sourceTree = "<group>"; };
 		2996FD9018DA092F009824E8 /* AreaLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaLayer.m; sourceTree = "<group>"; };
+		2996FD9318DA103B009824E8 /* SubLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubLevel.h; sourceTree = "<group>"; };
+		2996FD9418DA103B009824E8 /* SubLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubLevel.m; sourceTree = "<group>"; };
 		299BECF518969E2700CBBBAE /* level2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = level2.tmx; path = Resources/tileMap/level2.tmx; sourceTree = "<group>"; };
 		299BECF818969FA500CBBBAE /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		299BECF918969FA500CBBBAE /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
@@ -1118,7 +1121,6 @@
 				299BECFD18969FF800CBBBAE /* GamePlayScene */,
 				299BECFC18969FE700CBBBAE /* StartScene */,
 				299BECFB18969FD000CBBBAE /* MenuScene */,
-				299BECF718969F7100CBBBAE /* LevelScene */,
 				2984CEA11816C1AD001DBF9C /* HelloWorldLayer.h */,
 				2984CEA21816C1AD001DBF9C /* HelloWorldLayer.mm */,
 				2984CEA41816C1AD001DBF9C /* IntroLayer.h */,
@@ -1978,10 +1980,21 @@
 		2996FD8B18DA0812009824E8 /* AreaScene */ = {
 			isa = PBXGroup;
 			children = (
+				2996FD9218DA1028009824E8 /* SubLevel */,
+				299BECF718969F7100CBBBAE /* LevelScene */,
 				2996FD8F18DA092F009824E8 /* AreaLayer.h */,
 				2996FD9018DA092F009824E8 /* AreaLayer.m */,
 			);
 			name = AreaScene;
+			sourceTree = "<group>";
+		};
+		2996FD9218DA1028009824E8 /* SubLevel */ = {
+			isa = PBXGroup;
+			children = (
+				2996FD9318DA103B009824E8 /* SubLevel.h */,
+				2996FD9418DA103B009824E8 /* SubLevel.m */,
+			);
+			name = SubLevel;
 			sourceTree = "<group>";
 		};
 		299BECF718969F7100CBBBAE /* LevelScene */ = {
@@ -2291,6 +2304,7 @@
 				2984CE0D1816C1AC001DBF9C /* b2BroadPhase.cpp in Sources */,
 				2984CE7B1816C1AC001DBF9C /* b2GearJoint.cpp in Sources */,
 				2984CD271816C1AA001DBF9C /* CCScene.m in Sources */,
+				2996FD9518DA103B009824E8 /* SubLevel.m in Sources */,
 				29248B8B1882691100AA7F01 /* Chest.mm in Sources */,
 				2984CF241816C3E2001DBF9C /* CCBSequenceProperty.m in Sources */,
 				2984CE3E1816C1AC001DBF9C /* b2StackAllocator.cpp in Sources */,

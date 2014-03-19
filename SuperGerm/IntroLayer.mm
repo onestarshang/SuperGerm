@@ -67,7 +67,7 @@
 {
     CCSprite *pressStart = [CCSprite spriteWithSpriteFrameName:@"pressstart.png"];
     [self addChild:pressStart];
-    [pressStart setPosition:ccp(SCREEN.width/3, SCREEN.height*2/3)];
+    [pressStart setPosition:ccp(SCREEN.width/3 - 40, SCREEN.height*2/3 + 10)];
     
     CCFiniteTimeAction *fadeIn = [CCFadeIn actionWithDuration:1];
     CCFiniteTimeAction *fadeOut = [CCFadeOut actionWithDuration:1.5];

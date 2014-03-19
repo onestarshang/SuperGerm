@@ -21,8 +21,9 @@
 {
     if (self = [super init]) {        
         CCSprite *background = [CCSprite spriteWithFile:@"Default-568h@2x.png"];
-        [background setAnchorPoint:ccp(0, 0)];
         [self addChild:background];
+        background.rotation = 90;
+        [background setPosition:CENTER];
     }
     return self;
 }

@@ -507,25 +507,25 @@ const int SPEED = 6;
         [self playStandbyAnimation];
     }
     
-    BOOL _onGround = self.contactFloorCount > 0;
-    
-    if (_onGround && self.isTouchingB && jumpAccelerationCount == 0)
-    {
-        speed.y = jumpHeight;
-        [self playBigJumpAnimaiton];
-    }
-    
-    if (self.isTouchingB && !_onGround && jumpAccelerationCount<5)
-    {
-        [self playSmallJumpAnimaiton];
-        speed.y += jumpAcceleration;
-        jumpAccelerationCount++;
-        CCLOG(@"jumpAccelerationCount:%d",jumpAccelerationCount);
-    }
-    else if (!self.isTouchingB)
-    {
-        jumpAccelerationCount = 0;
-    }
+//    BOOL _onGround = self.contactFloorCount > 0;
+//    
+//    if (_onGround && self.isTouchingB && jumpAccelerationCount == 0)
+//    {
+//        speed.y = jumpHeight;
+//        [self playBigJumpAnimaiton];
+//    }
+//    
+//   else if (!_onGround && jumpAccelerationCount<5 && self.isTouchingB)
+//    {
+//        [self playSmallJumpAnimaiton];
+//        speed.y += jumpAcceleration;
+//        jumpAccelerationCount++;
+//        CCLOG(@"jumpAccelerationCount:%d",jumpAccelerationCount);
+//    }
+//    else if (_onGround)
+//    {
+//        jumpAccelerationCount = 0;
+//    }
     
     if (speed.x > maxVelocity) {
         speed.x = maxVelocity;
@@ -689,6 +689,26 @@ const int SPEED = 6;
 }
 
 
+//bool poweradded = NO;
+//-(void) buttonCallBack:(int)tag power:(float)power
+//{
+//    if (tag) {
+//        self.isTouchingA = YES;
+//        self.isTouchingR = NO;
+//        self.isTouchingL = NO;
+//    }
+//    else
+//    {
+//        if (power) {
+//            self.isTouchingB = YES;
+//        }
+//        else
+//        {
+//            self.isTouchingB = NO;
+//        }
+//    }
+//}
+
 bool poweradded = NO;
 -(void) buttonCallBack:(int)tag power:(float)power
 {
@@ -699,15 +719,26 @@ bool poweradded = NO;
     }
     else
     {
-        if (power) {
-            self.isTouchingB = YES;
+        b2Vec2 gravity = [WorldLayer world]->GetGravity();
+        if (_contactFloorCount > 0 && power<0.15) {
+            poweradded = NO;
+            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*sqrtf(-2*20*gravity.y/PTM_RATIO)), _body->GetWorldCenter());
+            //            NSLog(@"======");
+            [self playSmallJumpAnimaiton];
+            //            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
         }
-        else
+        else if (power>=0.15 && !poweradded)
         {
-            self.isTouchingB = NO;
+            poweradded = YES;
+            _body->ApplyLinearImpulse(b2Vec2(0,_body->GetMass()*sqrtf(-2*50*gravity.y/PTM_RATIO)), _body->GetWorldCenter());
+            //            NSLog(@"++++");
+            [self playBigJumpAnimaiton];
+            //            [[ControlCenter worldLayer] scaleSmoothlyTo:0.7 time:2];
         }
+        
     }
 }
+
 
 -(void)die
 {

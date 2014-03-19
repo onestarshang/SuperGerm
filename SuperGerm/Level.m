@@ -18,7 +18,7 @@
     
     [GameModel sharedGameModel].level = level;
 
-    [[CCDirector sharedDirector] replaceScene:[[GameStartScene alloc] init]];
+    [[CCDirector sharedDirector] pushScene:[[GameStartScene alloc] init]];
     
 }
 @end

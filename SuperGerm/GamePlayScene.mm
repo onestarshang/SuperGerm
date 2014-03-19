@@ -138,6 +138,7 @@ static CCLayer *_popLayer;
         [self addChild:_popLayer];
         
         [self scheduleUpdate];
+    
     }
 	return self;
 }

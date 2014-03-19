@@ -8,6 +8,7 @@
 
 #import "AreaLayer.h"
 #import "CCScrollView.h"
+#import "SubLevel.h"
 
 @implementation AreaLayer
 {
@@ -16,6 +17,7 @@
     CGPoint m_touchOffset;
     int m_nCurPage;
     int m_nPageCount;
+    CCArray *levels;
 }
 
 - (instancetype)init
@@ -23,12 +25,11 @@
     self = [super init];
     if (self) {
         m_nPageCount = 4;
+        levels = [[CCArray alloc] init];
         scrollView = [CCScrollView viewWithViewSize:[self contentSize]];
         [scrollView setTouchEnabled:NO];
         [scrollView setContainer:[self getContainerLayer]];
         [self addChild:scrollView];
-        
-        [self registerWithTouchDispatcher];
     }
     
     return self;
@@ -36,7 +37,7 @@
 
 - (void)registerWithTouchDispatcher
 {
-    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -62,14 +63,22 @@
     CGPoint endPoint = [[CCDirector sharedDirector] convertTouchToGL:touch];
     float distance = endPoint.x - m_touchPoint.x;
     
-    if (fabs(distance) < 3){
-        // 小于三，不做拖动操作，也排除了（抖动误操作）
+    if (fabs(distance) < 5){
+        [self chooseArea:endPoint];
     }else if (fabs(distance) > 50){
         // 大于 50，执行拖动效果
         [self adjustScrollView:distance];
     }else{
         // 回退为拖动之前的位置
         [self adjustScrollView:0];
+    }
+}
+
+- (void)chooseArea:(CGPoint)touchPoint
+{
+    CCNode *level = [levels objectAtIndex:m_nCurPage];
+    if (fabsf(touchPoint.x - (level.position.x - 330*m_nCurPage))<100) {
+         [[CCDirector sharedDirector] pushScene:[SubLevel scene]];
     }
 }
 
@@ -104,6 +113,8 @@
         [level setPosition:ccp(offSetX, offSetY)];
         
         [layer addChild:level];
+        
+        [levels addObject:level];
     }
     
     return layer;
@@ -139,6 +150,18 @@
     [button setPosition:ccp(0, -60)];
     
     return ret;
+}
+
+- (void)onExit
+{
+    [[[CCDirector sharedDirector] touchDispatcher] removeAllDelegates];
+    [super onExit];
+}
+
+- (void)onEnter
+{
+    [self registerWithTouchDispatcher];
+    [super onEnter];
 }
 
 @end

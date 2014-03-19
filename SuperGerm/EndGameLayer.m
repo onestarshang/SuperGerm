@@ -22,7 +22,7 @@
     [[GameKitHelper sharedGameKitHelper]
      submitScore:(int64_t)_score
      category:kHighScoreLeaderboardCategory];
-    [[CCDirector sharedDirector] replaceScene:[LevelLayer scene]];
+    [[CCDirector sharedDirector] popScene];
 }
 
 -(void)recoverPressed:(id)sender

@@ -32,9 +32,29 @@
     {
         [self addControlMenue];
         [[[CCDirector sharedDirector]openGLView]setMultipleTouchEnabled:YES];
+        
     }
     return self;
 }
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    return false;
+}
+
+- (void)onExit
+{
+    [[[CCDirector sharedDirector] touchDispatcher] removeAllDelegates];
+    [super onExit];
+}
+
+- (void)onEnter
+{
+    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+    [super onEnter];
+}
+
+
 
 NSMutableArray *controlItems;
 -(void) addControlMenue
@@ -177,7 +197,7 @@ float hitButtonHoldingTime;
     else
     {
         jumpButtonHoldingTime = 0;
-        [_delegate buttonCallBack:0 power:jumpButtonHoldingTime];
+//        [_delegate buttonCallBack:0 power:jumpButtonHoldingTime];
     }
     
     if ([hitButton active]) {
